@@ -1,6 +1,22 @@
 /* CSS Variables for Theming */
 :root {
-    /* Light theme - softer, more vibrant */
+    /* Light theme (Moon icon) - Purple/Black theme */
+    --bg-primary: #0d0812;
+    --bg-secondary: #70587c;
+    --bg-tertiary: #1a1425;
+    --text-primary: #f5f0f6;
+    --text-secondary: #d4c5e0;
+    --text-dark: #e8dff0;
+    --accent: #9B7EAE;
+    --accent-light: #b89ed1;
+    --card-bg: #1f1629;
+    --shadow: rgba(155, 126, 174, 0.2);
+    --section-primary: #000000;
+    --section-secondary: #70587c;
+}
+
+/* Dark Theme (Sun icon) - White/Accent theme */
+body.dark-theme {
     --bg-primary: #f5f0f6;
     --bg-secondary: #e8dff0;
     --bg-tertiary: #F9F4F5;
@@ -15,125 +31,7 @@
     --section-secondary: #f9f4f5;
 }
 
-/* Dark Theme - More dramatic differences */
-body.dark-theme {
-    --bg-primary: #0d0812;
-    --bg-secondary: #2a1f35;
-    --bg-tertiary: #1a1425;
-    --text-primary: #f5f0f6;
-    --text-secondary: #d4c5e0;
-    --text-dark: #e8dff0;
-    --accent: #9B7EAE;
-    --accent-light: #b89ed1;
-    --card-bg: #2a1f35;
-    --shadow: rgba(155, 126, 174, 0.2);
-    --section-primary: #1a1425;
-    --section-secondary: #2a1f35;
-}
-
-/* Dark Theme Overrides */
-body.dark-theme #aboutsec,
-body.dark-theme #experiencesec {
-    background: var(--section-secondary) !important;
-}
-
-body.dark-theme #worksec,
-body.dark-theme #connectsec {
-    background: var(--section-primary) !important;
-}
-
-body.dark-theme #projectcont {
-    background: var(--section-secondary) !important;
-}
-
-body.dark-theme .projectsec span {
-    background: var(--card-bg) !important;
-}
-
-body.dark-theme .projectname {
-    color: var(--text-dark) !important;
-}
-
-body.dark-theme .projectname1 {
-    color: var(--text-secondary) !important;
-}
-
-body.dark-theme .abouthead,
-body.dark-theme .workhead,
-body.dark-theme .projectheader p,
-body.dark-theme .experiencecont1,
-body.dark-theme .workcont,
-body.dark-theme .emailcont1 {
-    color: var(--text-primary) !important;
-}
-
-body.dark-theme .aboutcont,
-body.dark-theme .experiencecont2,
-body.dark-theme .experiencecont3,
-body.dark-theme .workcont1,
-body.dark-theme .conect,
-body.dark-theme .emailcont2 {
-    color: var(--text-secondary) !important;
-}
-
-body.dark-theme hr,
-body.dark-theme .section-divider {
-    border-color: rgba(200, 184, 219, 0.3) !important;
-    background-color: rgba(200, 184, 219, 0.3) !important;
-}
-
-body.dark-theme .conect1:hover {
-    border: 0.5px solid var(--accent) !important;
-    color: var(--accent) !important;
-    background: rgba(155, 126, 174, 0.15) !important;
-}
-
-body.dark-theme .projectsec {
-    background: transparent;
-}
-
-body.dark-theme .projectsec:hover {
-    box-shadow: 0 12px 24px rgba(155, 126, 174, 0.4) !important;
-    background: rgba(155, 126, 174, 0.08) !important;
-}
-
-body.dark-theme .projectsec span {
-    background: rgba(42, 31, 53, 0.8) !important;
-}
-
-body.dark-theme .projectsec:hover span {
-    background: rgba(155, 126, 174, 0.15) !important;
-}
-
-/* Dark mode navigation arrows */
-body.dark-theme .projectarrowbuttons img {
-    background: rgba(155, 126, 174, 0.2) !important;
-    filter: brightness(1.2) !important;
-}
-
-body.dark-theme .projectarrowbuttons img:hover {
-    background: rgba(155, 126, 174, 0.35) !important;
-}
-
-/* Dark mode progress bar */
-body.dark-theme .progress-container {
-    background-color: rgba(155, 126, 174, 0.2) !important;
-}
-
-body.dark-theme .progress-bar {
-    background-color: var(--accent-light) !important;
-}
-
-/* Dark mode "What I do" section */
-body.dark-theme .row.active {
-    background-color: rgba(155, 126, 174, 0.2) !important;
-}
-
-body.dark-theme .row:hover {
-    background-color: rgba(155, 126, 174, 0.12) !important;
-}
-
-/* Light Theme Specific Styles */
+/* Light Theme Overrides (Moon icon - Purple/Black theme) */
 body:not(.dark-theme) #aboutsec,
 body:not(.dark-theme) #experiencesec {
     background: var(--section-secondary) !important;
@@ -144,18 +42,82 @@ body:not(.dark-theme) #connectsec {
     background: var(--section-primary) !important;
 }
 
+body:not(.dark-theme) #projectcont {
+    background: var(--section-secondary) !important;
+}
+
 body:not(.dark-theme) hr,
 body:not(.dark-theme) .section-divider {
-    border-color: rgba(139, 111, 163, 0.2) !important;
-    background-color: rgba(139, 111, 163, 0.2) !important;
+    border-color: rgba(200, 184, 219, 0.3) !important;
+    background-color: rgba(200, 184, 219, 0.3) !important;
 }
 
 body:not(.dark-theme) .projectsec {
     box-shadow: 0 4px 12px var(--shadow);
-    background: var(--card-bg);
+    background: transparent;
 }
 
 body:not(.dark-theme) .projectsec:hover {
+    box-shadow: 0 12px 24px rgba(155, 126, 174, 0.3);
+    background: rgba(155, 126, 174, 0.08);
+}
+
+body:not(.dark-theme) .projectsec span {
+    background: rgba(155, 126, 174, 0.2) !important;
+}
+
+body:not(.dark-theme) .projectsec:hover span {
+    background: rgba(155, 126, 174, 0.3) !important;
+}
+
+body:not(.dark-theme) .projectarrowbuttons img {
+    background: rgba(155, 126, 174, 0.2) !important;
+    filter: brightness(1.2) !important;
+}
+
+body:not(.dark-theme) .projectarrowbuttons img:hover {
+    background: rgba(155, 126, 174, 0.35) !important;
+}
+
+body:not(.dark-theme) .progress-container {
+    background-color: rgba(155, 126, 174, 0.2) !important;
+}
+
+body:not(.dark-theme) .progress-bar {
+    background-color: var(--accent-light) !important;
+}
+
+body:not(.dark-theme) .row.active {
+    background-color: rgba(155, 126, 174, 0.2) !important;
+}
+
+body:not(.dark-theme) .row:hover {
+    background-color: rgba(155, 126, 174, 0.12) !important;
+}
+
+/* Dark Theme Specific Styles (Sun icon - White/Accent theme) */
+body.dark-theme #aboutsec,
+body.dark-theme #experiencesec {
+    background: var(--section-secondary) !important;
+}
+
+body.dark-theme #worksec,
+body.dark-theme #connectsec {
+    background: var(--section-primary) !important;
+}
+
+body.dark-theme hr,
+body.dark-theme .section-divider {
+    border-color: rgba(139, 111, 163, 0.2) !important;
+    background-color: rgba(139, 111, 163, 0.2) !important;
+}
+
+body.dark-theme .projectsec {
+    box-shadow: 0 4px 12px var(--shadow);
+    background: var(--card-bg);
+}
+
+body.dark-theme .projectsec:hover {
     box-shadow: 0 12px 24px rgba(139, 111, 163, 0.25);
 }
 
