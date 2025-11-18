@@ -1,5 +1,7 @@
 import { Component,ViewChild,ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
+import { trigger, transition, style, animate } from '@angular/animations';
+import { ThemeService } from '../theme.service';
 
  interface Card {
   imageUrl: string;
@@ -11,12 +13,30 @@ import { Router } from '@angular/router';
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
-  
+  animations: [
+    trigger('fadeInUp', [
+      transition(':enter', [
+        style({ opacity: 0, transform: 'translateY(20px)' }),
+        animate('600ms 100ms ease-out', style({ opacity: 1, transform: 'translateY(0)' }))
+      ])
+    ]),
+    trigger('slideIn', [
+      transition(':enter', [
+        style({ opacity: 0, transform: 'translateX(-20px)' }),
+        animate('500ms ease-out', style({ opacity: 1, transform: 'translateX(0)' }))
+      ])
+    ])
+  ]
 })
 
 export class HomeComponent {
+  isDarkMode$ = this.themeService.darkMode$;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, public themeService: ThemeService) {}
+
+  toggleTheme() {
+    this.themeService.toggleTheme();
+  }
 
   scrollToSection(sectionId: string): void {
     const element = document.getElementById(sectionId);

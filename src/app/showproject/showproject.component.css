@@ -7,7 +7,8 @@
   justify-content: center;
   align-items: flex-start;
   gap: 31px;
-  background: #70587c;
+  background: var(--section-secondary);
+  transition: background 0.3s ease;
 }
 .projectheader {
   display: flex;
@@ -16,7 +17,6 @@
   width: 100%;
   align-items: center;
   justify-content: space-between;
-  /* border: 1px solid white; */
 }
 .projectarrowbuttons {
   display: flex;
@@ -26,10 +26,11 @@
   cursor: pointer;
 }
 .projectheader p {
-  color: #f9f4f5;
+  color: var(--text-primary);
   font-family: Outfit;
   font-size: 24px;
-  font-weight: 400;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 .projectcontainer {
@@ -52,7 +53,7 @@
 .progress-container {
   width: 50%;
   height: 5px;
-  background-color: rgba(249, 244, 245, 0.1);
+  background-color: rgba(139, 111, 163, 0.2);
   border-radius: 100px;
   margin: 2px auto;
   overflow: hidden;
@@ -60,18 +61,23 @@
 
 .progress-bar {
   height: 100%;
-  background-color: rgba(249, 244, 245, 0.6);
+  background-color: var(--accent);
   border-radius: 1px;
   transition: width 0.3s ease-in-out;
 }
 
 .projectarrowbuttons img {
   cursor: pointer;
-  transition: opacity 0.3s ease;
+  transition: all 0.3s ease;
+  padding: 8px;
+  border-radius: 50%;
+  background: rgba(139, 111, 163, 0.1);
+  filter: brightness(1);
 }
 
 .projectarrowbuttons img:hover {
-  opacity: 0.8;
+  background: rgba(139, 111, 163, 0.2);
+  transform: scale(1.1);
 }
 
 @media (max-width: 767px) {

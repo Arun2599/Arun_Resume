@@ -1,8 +1,8 @@
 
   <div id="worksec">
     <p class="workhead">What I do</p>
-    <hr style="width: 100%;background-color: #C8B8DB;">
-  
+    <hr class="section-divider" style="width: 100%;">
+
     <div class="row" *ngFor="let content of contentData; let i = index"
          [ngClass]="{'active': activeRow === i}" (mouseenter)="setActiveRow(i)"
          (mouseleave)="setHideContentTimer()">
@@ -17,7 +17,7 @@
           </div>
         </ng-template>
       </div>
-      <hr style="width: 100%;background-color: #C8B8DB;">
+      <hr class="section-divider" style="width: 100%;">
     </div>
   </div>
   

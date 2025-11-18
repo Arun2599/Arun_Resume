@@ -3,41 +3,49 @@
   padding: 6vw 37vh;
   flex-direction: column;
   justify-content: center;
-  /* align-items:flex-start; */
-  /* gap: 10px; */
-  background: #000000;
+  background: var(--section-primary);
   line-height: 100%;
   width: auto;
-  /* height: 20%; */
+  transition: background 0.3s ease;
 }
 .workcont {
-  color: #c8b8db;
+  color: var(--text-primary);
   font-family: Outfit;
   font-size: 36px;
-  font-weight: 400;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 .workcont1 {
-  color: #c8b8db;
+  color: var(--text-secondary);
   font-family: Outfit;
   font-size: 24px;
   font-weight: 300;
+  transition: color 0.3s ease;
 }
 .workhead {
-  color: #c8b8db;
+  color: var(--text-primary);
   font-family: Outfit;
   font-size: 24px;
-  font-weight: 400;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 .row {
   /* padding: 20px; */
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.2s ease;
+  border-radius: 8px;
+  padding: 8px;
 }
 
 .row.active {
-  background-color: #000000;
-  color: rgb(0, 0, 0);
+  background-color: rgba(139, 111, 163, 0.12);
+  color: var(--text-primary);
+}
+
+.row:hover {
+  background-color: rgba(139, 111, 163, 0.08);
+  transform: translateX(4px);
 }
 
 .hidden-content {

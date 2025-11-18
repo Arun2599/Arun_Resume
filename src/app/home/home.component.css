@@ -9,10 +9,19 @@ body {
   padding: 0;
 }
 #heropage {
-  background-image: url("./heroimage.svg");
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("./heroimage.webp");
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    image-set(
+      url("./heroimage.webp") type("image/webp"),
+      url("./heroimage.jpg") type("image/jpeg")
+    );
   width: auto;
   height: 100vh;
   background-size: cover;
+  background-position: center;
   display: flex;
   padding: 2vw;
   justify-content: space-between;
@@ -91,6 +100,31 @@ body {
   align-items: flex-end;
   gap: 10px;
 }
+
+.theme-toggle {
+  background: rgba(249, 244, 245, 0.1);
+  border: 1px solid rgba(249, 244, 245, 0.2);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--text-primary);
+  backdrop-filter: blur(10px);
+}
+
+.theme-toggle:hover {
+  background: rgba(249, 244, 245, 0.2);
+  transform: rotate(180deg);
+  box-shadow: 0 4px 12px rgba(112, 88, 124, 0.3);
+}
+
+.theme-toggle svg {
+  transition: transform 0.3s ease;
+}
 .sidemenucont {
   color: #f9f4f5;
   font-family: Outfit;
@@ -109,21 +143,24 @@ body {
   justify-content: center;
   align-items: flex-start;
   gap: 31px;
-  background: #70587c;
+  background: var(--section-secondary);
   line-height: 100%;
+  transition: background 0.3s ease;
 }
 .abouthead {
-  color: #f9f4f5;
+  color: var(--text-primary);
   font-family: Outfit;
   font-size: 24px;
-  font-weight: 400;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 .aboutcont {
-  color: #f9f4f5;
+  color: var(--text-secondary);
   font-family: Outfit;
   font-size: 28px;
   font-weight: 300;
   line-height: 150%;
+  transition: color 0.3s ease;
 }
 #worksec {
   display: flex;
@@ -132,8 +169,9 @@ body {
   justify-content: center;
   align-items: flex-start;
   gap: 31px;
-  background: #000000;
+  background: var(--section-primary);
   line-height: 120%;
+  transition: background 0.3s ease;
 }
 
 #experiencesec {
@@ -143,37 +181,43 @@ body {
   justify-content: center;
   align-items: flex-start;
   gap: 31px;
-  background: #70587c;
+  background: var(--section-secondary);
+  transition: background 0.3s ease;
 }
 .workcont {
-  color: #c8b8db;
+  color: var(--text-secondary);
   font-family: Outfit;
   font-size: 30px;
   font-weight: 400;
+  transition: color 0.3s ease;
 }
 .workhead {
-  color: #c8b8db;
+  color: var(--text-primary);
   font-family: Outfit;
   font-size: 24px;
-  font-weight: 400;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 .experiencecont1 {
-  color: #c8b8db;
+  color: var(--text-primary);
   font-family: Outfit;
   font-size: 36px;
   font-weight: 500;
+  transition: color 0.3s ease;
 }
 .experiencecont2 {
-  color: #c8b8db;
+  color: var(--text-secondary);
   font-family: Outfit;
   font-size: 32px;
   font-weight: 400;
+  transition: color 0.3s ease;
 }
 .experiencecont3 {
-  color: #c8b8db;
+  color: var(--text-secondary);
   font-family: Outfit;
   font-size: 24px;
   font-weight: 300;
+  transition: color 0.3s ease;
 }
 
 #connectsec {
@@ -183,11 +227,12 @@ body {
   justify-content: center;
   align-items: flex-start;
   gap: 31px;
-  background: #000000;
+  background: var(--section-primary);
   line-height: 120%;
+  transition: background 0.3s ease;
 }
 .conect {
-  color: #c8b8db;
+  color: var(--text-secondary);
   font-family: Outfit;
   font-size: 24px;
   font-weight: 400;
@@ -199,19 +244,22 @@ body {
   width: fit-content;
   padding: 0.5vw 4vh;
   border-radius: 10px;
+  transition: all 0.3s ease;
 }
 .conect1:hover {
-  border: 0.5px solid #c8b8db;
-  color: #c8b8db;
+  border: 0.5px solid var(--accent);
+  color: var(--accent);
+  background: rgba(139, 111, 163, 0.1);
 }
 .emailcont1 {
-  color: #c8b8db;
+  color: var(--text-primary);
   font-family: Outfit;
   font-size: 24px;
-  font-weight: 400;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 .emailcont2 {
-  color: #c8b8db;
+  color: var(--text-secondary);
   font-family: Outfit;
   font-size: 20px;
   font-weight: 300;
@@ -284,7 +332,15 @@ a {
 
 @media (max-width: 767px) {
   #heropage {
-    background-image: url("./heroimg.svg");
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("./heroimg.webp");
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      image-set(
+        url("./heroimg.webp") type("image/webp"),
+        url("./heroimg.jpg") type("image/jpeg")
+      );
     width: auto;
     height: 80vh;
     background-size: cover;
@@ -449,7 +505,15 @@ a {
 
 @media (min-width: 768px) and (max-width: 1023px) {
   #heropage {
-    background-image: url("./hero-tab.svg");
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("./hero-tab.webp");
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      image-set(
+        url("./hero-tab.webp") type("image/webp"),
+        url("./hero-tab.jpg") type("image/jpeg")
+      );
     width: auto;
     height: 100vh;
     background-size: cover;
@@ -583,7 +647,15 @@ a {
 
 @media (min-width: 1024px) and (max-width: 1439px) {
   #heropage {
-    background-image: url("./hero-lap.svg");
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("./hero-lap.webp");
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      image-set(
+        url("./hero-lap.webp") type("image/webp"),
+        url("./hero-lap.jpg") type("image/jpeg")
+      );
     width: auto;
     height: 100vh;
     background-size: cover;
