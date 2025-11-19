@@ -10,6 +10,10 @@ import { CardComponent } from './card/card.component';
 import { ShowprojectComponent } from './showproject/showproject.component';
 import { SkillspageComponent } from './skillspage/skillspage.component';
 import { ScrollAnimateDirective } from './scroll-animate.directive';
+
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAnalyticsModule } from '@angular/fire/compat/analytics';
+import { environment } from '../environments/environment';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +28,8 @@ import { ScrollAnimateDirective } from './scroll-animate.directive';
     CommonModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAnalyticsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
