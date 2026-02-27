@@ -1,0 +1,52 @@
+<div id="journey-section" appScrollAnimate>
+  <div class="journey-header">
+    <p class="journey-title">Learning Journey</p>
+    <p class="journey-subtitle">Problem-solving through experience</p>
+  </div>
+
+  <div class="timeline-container">
+    <div class="timeline-line"></div>
+
+    <div class="experience-card"
+         *ngFor="let exp of experiences; let i = index"
+         [@fadeInUp]
+         [class.expanded]="exp.isExpanded"
+         (click)="toggleExpand(exp)">
+
+      <div class="card-header">
+        <div class="timeline-dot">
+          <span class="company-icon">{{ exp.icon }}</span>
+        </div>
+
+        <div class="card-header-content">
+          <div class="company-info">
+            <h3 class="company-name">{{ exp.company }}</h3>
+            <span class="period-badge">{{ exp.period }}</span>
+          </div>
+          <p class="role-title">{{ exp.role }}</p>
+        </div>
+
+        <div class="expand-indicator" [class.rotated]="exp.isExpanded">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </div>
+      </div>
+
+      <div class="card-content" *ngIf="exp.isExpanded" [@expandCollapse]>
+        <div class="projects-list" [@listAnimation]="exp.projects.length">
+          <div class="project-item" *ngFor="let project of exp.projects">
+            <div class="project-header">
+              <span class="project-dot"></span>
+              <h4 class="project-name">{{ project.name }}</h4>
+            </div>
+            <p class="project-description">{{ project.description }}</p>
+            <div class="skills-container">
+              <span class="skill-tag" *ngFor="let skill of project.skills">{{ skill }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,498 @@
+#journey-section {
+  display: flex;
+  padding: 6vw 37vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 50px;
+  background: var(--section-secondary);
+  transition: background 0.3s ease;
+  position: relative;
+}
+
+.journey-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.journey-title {
+  color: var(--text-primary);
+  font-family: Outfit;
+  font-size: 24px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  margin: 0;
+}
+
+.journey-subtitle {
+  color: var(--text-secondary);
+  font-family: Outfit;
+  font-size: 18px;
+  font-weight: 300;
+  transition: color 0.3s ease;
+  margin: 0;
+}
+
+.timeline-container {
+  width: 100%;
+  position: relative;
+  padding-left: 40px;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 20px;
+  top: 30px;
+  bottom: 30px;
+  width: 2px;
+  background: var(--accent);
+  opacity: 0.3;
+  transition: all 0.3s ease;
+}
+
+.experience-card {
+  position: relative;
+  margin-bottom: 30px;
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 24px 28px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid transparent;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.experience-card:hover {
+  transform: translateX(8px);
+  border-color: var(--accent);
+  box-shadow: 0 8px 30px rgba(155, 126, 174, 0.2);
+  background: var(--card-bg);
+}
+
+.experience-card.expanded {
+  transform: translateX(8px);
+  border-color: var(--accent);
+  box-shadow: 0 12px 40px rgba(155, 126, 174, 0.25);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -62px;
+  width: 44px;
+  height: 44px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(155, 126, 174, 0.4);
+  transition: all 0.3s ease;
+  border: 3px solid var(--section-secondary);
+  z-index: 2;
+}
+
+.experience-card:hover .timeline-dot,
+.experience-card.expanded .timeline-dot {
+  transform: scale(1.15);
+  box-shadow: 0 6px 20px rgba(155, 126, 174, 0.6);
+}
+
+.company-icon {
+  font-size: 20px;
+}
+
+.card-header-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.company-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.company-name {
+  color: var(--text-primary);
+  font-family: Outfit;
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.period-badge {
+  padding: 6px 14px;
+  background: rgba(155, 126, 174, 0.15);
+  border-radius: 20px;
+  color: var(--accent-light);
+  font-family: Outfit;
+  font-size: 14px;
+  font-weight: 400;
+  transition: all 0.3s ease;
+}
+
+.experience-card:hover .period-badge,
+.experience-card.expanded .period-badge {
+  background: rgba(155, 126, 174, 0.25);
+  color: var(--accent-light);
+}
+
+.role-title {
+  color: var(--text-secondary);
+  font-family: Outfit;
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.expand-indicator {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(155, 126, 174, 0.1);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.expand-indicator svg {
+  color: var(--accent);
+  transition: transform 0.3s ease;
+}
+
+.expand-indicator.rotated svg {
+  transform: rotate(180deg);
+}
+
+.experience-card:hover .expand-indicator {
+  background: rgba(155, 126, 174, 0.2);
+}
+
+.card-content {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(155, 126, 174, 0.15);
+}
+
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.project-item {
+  padding: 20px;
+  background: rgba(155, 126, 174, 0.05);
+  border-radius: 12px;
+  border-left: 3px solid var(--accent);
+  transition: all 0.3s ease;
+}
+
+.project-item:hover {
+  background: rgba(155, 126, 174, 0.1);
+  transform: translateX(4px);
+}
+
+.project-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.project-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.project-name {
+  color: var(--text-primary);
+  font-family: Outfit;
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.project-description {
+  color: var(--text-secondary);
+  font-family: Outfit;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 160%;
+  margin: 0 0 16px 20px;
+  transition: color 0.3s ease;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-left: 20px;
+}
+
+.skill-tag {
+  padding: 6px 12px;
+  background: rgba(155, 126, 174, 0.15);
+  border: 1px solid rgba(155, 126, 174, 0.3);
+  border-radius: 6px;
+  color: var(--text-secondary);
+  font-family: Outfit;
+  font-size: 13px;
+  font-weight: 400;
+  transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+  background: rgba(155, 126, 174, 0.25);
+  border-color: var(--accent);
+  color: var(--text-primary);
+  transform: translateY(-2px);
+}
+
+/* Dark theme overrides */
+body.dark-theme #journey-section {
+  background: var(--section-secondary);
+}
+
+body.dark-theme .timeline-dot {
+  border-color: var(--section-secondary);
+}
+
+body.dark-theme .experience-card {
+  background: var(--card-bg);
+  box-shadow: 0 4px 20px rgba(112, 88, 124, 0.08);
+}
+
+body.dark-theme .experience-card:hover,
+body.dark-theme .experience-card.expanded {
+  box-shadow: 0 12px 40px rgba(139, 111, 163, 0.15);
+}
+
+body.dark-theme .timeline-line {
+  opacity: 0.2;
+}
+
+body.dark-theme .project-item {
+  background: rgba(139, 111, 163, 0.08);
+}
+
+body.dark-theme .project-item:hover {
+  background: rgba(139, 111, 163, 0.12);
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+  #journey-section {
+    padding: 7vw 4vw;
+    gap: 30px;
+  }
+
+  .journey-title {
+    font-size: 14px;
+  }
+
+  .journey-subtitle {
+    font-size: 12px;
+  }
+
+  .timeline-container {
+    padding-left: 30px;
+  }
+
+  .timeline-line {
+    left: 14px;
+  }
+
+  .timeline-dot {
+    left: -48px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .company-icon {
+    font-size: 14px;
+  }
+
+  .experience-card {
+    padding: 16px 18px;
+    margin-bottom: 20px;
+  }
+
+  .experience-card:hover,
+  .experience-card.expanded {
+    transform: translateX(4px);
+  }
+
+  .company-name {
+    font-size: 18px;
+  }
+
+  .period-badge {
+    font-size: 11px;
+    padding: 4px 10px;
+  }
+
+  .role-title {
+    font-size: 14px;
+  }
+
+  .expand-indicator {
+    width: 32px;
+    height: 32px;
+  }
+
+  .expand-indicator svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .card-content {
+    margin-top: 16px;
+    padding-top: 16px;
+  }
+
+  .project-item {
+    padding: 14px;
+  }
+
+  .project-name {
+    font-size: 16px;
+  }
+
+  .project-description {
+    font-size: 13px;
+    margin: 0 0 12px 16px;
+  }
+
+  .skills-container {
+    margin-left: 16px;
+    gap: 6px;
+  }
+
+  .skill-tag {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  #journey-section {
+    padding: 10vw 10vw;
+    gap: 40px;
+  }
+
+  .journey-title {
+    font-size: 16px;
+  }
+
+  .journey-subtitle {
+    font-size: 14px;
+  }
+
+  .timeline-container {
+    padding-left: 35px;
+  }
+
+  .timeline-line {
+    left: 16px;
+  }
+
+  .timeline-dot {
+    left: -54px;
+    width: 38px;
+    height: 38px;
+  }
+
+  .company-icon {
+    font-size: 16px;
+  }
+
+  .company-name {
+    font-size: 22px;
+  }
+
+  .period-badge {
+    font-size: 12px;
+  }
+
+  .role-title {
+    font-size: 16px;
+  }
+
+  .project-name {
+    font-size: 18px;
+  }
+
+  .project-description {
+    font-size: 14px;
+  }
+
+  .skill-tag {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+  #journey-section {
+    padding: 10vw 10vw;
+    gap: 45px;
+  }
+
+  .journey-title {
+    font-size: 18px;
+  }
+
+  .journey-subtitle {
+    font-size: 16px;
+  }
+
+  .timeline-dot {
+    width: 40px;
+    height: 40px;
+    left: -60px;
+  }
+
+  .company-icon {
+    font-size: 18px;
+  }
+
+  .company-name {
+    font-size: 24px;
+  }
+
+  .period-badge {
+    font-size: 13px;
+  }
+
+  .role-title {
+    font-size: 17px;
+  }
+
+  .project-name {
+    font-size: 19px;
+  }
+
+  .project-description {
+    font-size: 15px;
+  }
+}

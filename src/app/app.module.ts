@@ -14,6 +14,7 @@ import { ScrollAnimateDirective } from './scroll-animate.directive';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAnalyticsModule } from '@angular/fire/compat/analytics';
 import { environment } from '../environments/environment';
+import { ExperienceJourneyComponent } from './experience-journey/experience-journey.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import { environment } from '../environments/environment';
     CardComponent,
     ShowprojectComponent,
     SkillspageComponent,
-    ScrollAnimateDirective
+    ScrollAnimateDirective,
+    ExperienceJourneyComponent
   ],
   imports: [
     BrowserModule,

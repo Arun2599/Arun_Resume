@@ -37,6 +37,10 @@ body:not(.dark-theme) #experiencesec {
     background: var(--section-secondary) !important;
 }
 
+body:not(.dark-theme) #journey-section {
+    background: var(--section-primary) !important;
+}
+
 body:not(.dark-theme) #worksec,
 body:not(.dark-theme) #connectsec {
     background: var(--section-primary) !important;
@@ -99,6 +103,10 @@ body:not(.dark-theme) .row:hover {
 body.dark-theme #aboutsec,
 body.dark-theme #experiencesec {
     background: var(--section-secondary) !important;
+}
+
+body.dark-theme #journey-section {
+    background: var(--section-primary) !important;
 }
 
 body.dark-theme #worksec,
