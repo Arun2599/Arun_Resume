@@ -1,23 +1,78 @@
+<section id="skills-section" class="skills-section">
+  <div class="section-container">
+    <span class="section-label">Services</span>
+    <h2 class="section-title">What I <span class="gradient-text">Create</span></h2>
 
-  <div id="worksec">
-    <p class="workhead">What I do</p>
-    <hr class="section-divider" style="width: 100%;">
-
-    <div class="row" *ngFor="let content of contentData; let i = index"
-         [ngClass]="{'active': activeRow === i}" (mouseenter)="setActiveRow(i)"
-         (mouseleave)="setHideContentTimer()">
-      <div class="content">
-        <ng-container *ngIf="activeRow !== i; else newContent">
-          <p class="workcont">{{ content.title }}</p>
-        </ng-container>
-        <ng-template #newContent>
-          <div class="hidden-content">
-            <p class="workcont">{{ content.title }}</p>
-            <p class="workcont1">{{ content.description }}</p>
-          </div>
-        </ng-template>
+    <div class="bento-grid">
+      <!-- UI/UX Design - Large Card -->
+      <div class="bento-card bento-large glass-card">
+        <div class="card-icon">🎨</div>
+        <h3 class="card-title">UI/UX Design</h3>
+        <p class="card-description">
+          Creating intuitive, user-centered digital experiences that delight users and drive business goals.
+        </p>
+        <div class="card-tags">
+          <span class="tag">Figma</span>
+          <span class="tag">Wireframing</span>
+          <span class="tag">Prototyping</span>
+          <span class="tag">User Research</span>
+        </div>
       </div>
-      <hr class="section-divider" style="width: 100%;">
+
+      <!-- Mobile Development - Medium Card -->
+      <div class="bento-card bento-medium glass-card">
+        <div class="card-icon">📱</div>
+        <h3 class="card-title">Mobile Development</h3>
+        <p class="card-description">
+          Building cross-platform apps for iOS and Android with native performance.
+        </p>
+        <div class="card-tags">
+          <span class="tag">React Native</span>
+          <span class="tag">Ionic</span>
+          <span class="tag">Firebase</span>
+        </div>
+      </div>
+
+      <!-- Web Development - Medium Card -->
+      <div class="bento-card bento-medium glass-card">
+        <div class="card-icon">🌐</div>
+        <h3 class="card-title">Web Development</h3>
+        <p class="card-description">
+          Crafting responsive, performant web applications with modern frameworks.
+        </p>
+        <div class="card-tags">
+          <span class="tag">Angular</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">HTML/CSS</span>
+        </div>
+      </div>
+
+      <!-- Backend Development - Small Card -->
+      <div class="bento-card bento-small glass-card">
+        <div class="card-icon">⚙️</div>
+        <h3 class="card-title">Backend</h3>
+        <p class="card-description">
+          Scalable APIs and server-side logic.
+        </p>
+        <div class="card-tags">
+          <span class="tag">Rust</span>
+          <span class="tag">Firebase</span>
+        </div>
+      </div>
+
+      <!-- Full-Stack Products - Small Card -->
+      <div class="bento-card bento-small glass-card">
+        <div class="card-icon">🚀</div>
+        <h3 class="card-title">Full-Stack</h3>
+        <p class="card-description">
+          End-to-end product development.
+        </p>
+        <div class="card-tags">
+          <span class="tag">ERP</span>
+          <span class="tag">E-commerce</span>
+          <span class="tag">POS</span>
+        </div>
+      </div>
     </div>
   </div>
-  
+</section>

@@ -53,7 +53,7 @@ export class ExperienceJourneyComponent {
     {
       company: 'Surfboard Payments',
       period: 'Internship',
-      role: 'UI/UX Designer & Front-end Developer',
+      role: 'UI/UX Designer & Frontend Developer',
       icon: '🚀',
       isExpanded: false,
       projects: [
@@ -72,7 +72,7 @@ export class ExperienceJourneyComponent {
     {
       company: 'Maven Alpha',
       period: 'Jun 2022 - Dec 2022',
-      role: 'UI/UX Designer & Front-end Developer',
+      role: 'UI/UX Designer & Frontend Developer',
       icon: '🎨',
       isExpanded: false,
       projects: [
@@ -89,9 +89,9 @@ export class ExperienceJourneyComponent {
       ]
     },
     {
-      company: 'Techcora',
+      company: 'Techcora Corporation',
       period: 'Present',
-      role: 'UI/UX Designer & Front-end Developer',
+      role: 'UI/UX Designer & Full-Stack Developer',
       icon: '💡',
       isExpanded: false,
       projects: [

@@ -1,67 +1,46 @@
-
-
-// @Component({
-//   selector: 'app-skillspage',
-//   templateUrl: './skillspage.component.html',
-//   styleUrls: ['./skillspage.component.css']
-// })
-// export class SkillspageComponent {
-//   activeRow: number | null = null;
-
-//   setActiveRow(row: number) {
-//     this.activeRow = row;
-//   }
-
-
-// }
-import { Component, OnDestroy } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-skillspage',
   templateUrl: './skillspage.component.html',
   styleUrls: ['./skillspage.component.css']
 })
-export class SkillspageComponent implements OnDestroy {
-  activeRow: number | null = null;
-  hideContentTimer: any;
-
-  contentData = [
+export class SkillspageComponent {
+  skills = [
     {
-      title: 'UI UX Design',
-      description: '"Creating digital smiles through UI/UX."',
+      title: 'UI/UX Design',
+      description: 'Creating intuitive, user-centered digital experiences that delight users and drive business goals.',
+      icon: '🎨',
+      tags: ['Figma', 'Wireframing', 'Prototyping', 'User Research'],
+      size: 'large'
     },
     {
-      title: 'Logo Design',
-      description: '"A visual handshake between brand and audience."',
+      title: 'Mobile Development',
+      description: 'Building cross-platform apps for iOS and Android with native performance.',
+      icon: '📱',
+      tags: ['React Native', 'Ionic', 'Firebase'],
+      size: 'medium'
     },
     {
-      title: 'Front-end development',
-      description: '"Building bridges between users and technology."',
+      title: 'Web Development',
+      description: 'Crafting responsive, performant web applications with modern frameworks.',
+      icon: '🌐',
+      tags: ['Angular', 'TypeScript', 'HTML/CSS'],
+      size: 'medium'
     },
     {
-      title: 'Web development',
-      description: '"Building the web, pixel by pixel."',
+      title: 'Backend Development',
+      description: 'Building scalable APIs and server-side logic.',
+      icon: '⚙️',
+      tags: ['Rust', 'Firebase Functions'],
+      size: 'small'
     },
-  ];
-
-  setActiveRow(row: number) {
-    this.clearHideContentTimer();
-    this.activeRow = row;
-  }
-
-  clearHideContentTimer() {
-    if (this.hideContentTimer) {
-      clearTimeout(this.hideContentTimer);
+    {
+      title: 'Full-Stack Products',
+      description: 'End-to-end product development from design to deployment.',
+      icon: '🚀',
+      tags: ['ERP Systems', 'E-commerce', 'POS'],
+      size: 'small'
     }
-  }
-
-  setHideContentTimer() {
-    this.hideContentTimer = setTimeout(() => {
-      this.activeRow = null;
-    }, 1000); // Adjust the time (in milliseconds) as needed
-  }
-
-  ngOnDestroy() {
-    this.clearHideContentTimer();
-  }
+  ];
 }

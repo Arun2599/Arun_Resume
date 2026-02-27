@@ -15,6 +15,8 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAnalyticsModule } from '@angular/fire/compat/analytics';
 import { environment } from '../environments/environment';
 import { ExperienceJourneyComponent } from './experience-journey/experience-journey.component';
+import { ToolsMarqueeComponent } from './tools-marquee/tools-marquee.component';
+import { TestimonialsComponent } from './testimonials/testimonials.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +25,9 @@ import { ExperienceJourneyComponent } from './experience-journey/experience-jour
     ShowprojectComponent,
     SkillspageComponent,
     ScrollAnimateDirective,
-    ExperienceJourneyComponent
+    ExperienceJourneyComponent,
+    ToolsMarqueeComponent,
+    TestimonialsComponent
   ],
   imports: [
     BrowserModule,

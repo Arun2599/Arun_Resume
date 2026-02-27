@@ -1,0 +1,28 @@
+<section class="tools-section">
+  <div class="section-header">
+    <span class="section-label">Tech Stack</span>
+    <h2 class="section-title">Tools I <span class="gradient-text">Work With</span></h2>
+  </div>
+
+  <div class="marquee-wrapper">
+    <!-- First Row - Left to Right -->
+    <div class="marquee-track">
+      <div class="marquee-content animate-left">
+        <div class="tool-card" *ngFor="let tool of duplicatedTools">
+          <span class="tool-icon">{{ tool.icon }}</span>
+          <span class="tool-name">{{ tool.name }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Second Row - Right to Left -->
+    <div class="marquee-track">
+      <div class="marquee-content animate-right">
+        <div class="tool-card" *ngFor="let tool of duplicatedTools">
+          <span class="tool-icon">{{ tool.icon }}</span>
+          <span class="tool-name">{{ tool.name }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
