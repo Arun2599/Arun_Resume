@@ -1,35 +1,67 @@
-<html>
+<!-- Hero Section -->
+<section id="heropage" class="hero">
+    <!-- Gradient Mesh Background -->
+    <div class="hero-bg"></div>
 
-    <head>
-        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-    </head>
-<body>
-    <div id="heropage">
-        <div id="logonav">
-    <div class="logo" @slideIn>
-    <span class="logoimg"><img src="./assets/logo.svg"></span>
-    <span class="logofont">Arunkumar</span>
-    </div>
-    <div class="netwrok">
-        <a href="https://www.behance.net/ruvjp" target="_blank" rel="noopener noreferrer"> <img src="./assets/behance.svg"></a>
-        <a href="https://www.linkedin.com/in/arun-kumar-937399254/" target="_blank" rel="noopener noreferrer"><img src="./assets/linkedin.svg"></a>
-        <a href="https://instagram.com/_arunvjcopzz_?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D" target="_blank" rel="noopener noreferrer"><img src="./assets/instagram.svg"></a>
-        <a href="https://dribbble.com/Arunkumar_07" target="_blank" rel="noopener noreferrer"><img src="./assets/dribbble.svg"></a>
-    </div>
+    <!-- Navigation -->
+    <nav class="hero-nav" @slideIn>
+        <div class="logo">
+            <span class="logo-icon"><img src="./assets/logo.svg" alt="Logo"></span>
+            <span class="logo-text">Arunkumar</span>
+        </div>
+
+        <div class="social-links">
+            <a href="https://www.behance.net/ruvjp" target="_blank" rel="noopener noreferrer" class="social-link">
+                <img src="./assets/behance.svg" alt="Behance">
+            </a>
+            <a href="https://www.linkedin.com/in/arun-kumar-937399254/" target="_blank" rel="noopener noreferrer" class="social-link">
+                <img src="./assets/linkedin.svg" alt="LinkedIn">
+            </a>
+            <a href="https://instagram.com/_arunvjcopzz_?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D" target="_blank" rel="noopener noreferrer" class="social-link">
+                <img src="./assets/instagram.svg" alt="Instagram">
+            </a>
+            <a href="https://dribbble.com/Arunkumar_07" target="_blank" rel="noopener noreferrer" class="social-link">
+                <img src="./assets/dribbble.svg" alt="Dribbble">
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Content -->
+    <div class="hero-content" @fadeInUp>
+        <!-- Availability Badge -->
+        <div class="availability-badge">
+            <span class="pulse-dot"></span>
+            <span>Available for work</span>
+        </div>
+
+        <!-- Main Heading -->
+        <h1 class="hero-title">
+            <span class="hero-name gradient-text">Arunkumar</span>
+        </h1>
+
+        <p class="hero-tagline">UI/UX Designer & Full-Stack Developer</p>
+
+        <p class="hero-description">
+            I design and build complete products—from Figma to Play Store.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="hero-cta">
+            <a (click)="scrollToSection('projectsec')" class="btn btn-primary">
+                View My Work
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </a>
+            <a (click)="scrollToSection('connectsec')" class="btn btn-secondary">
+                Get in Touch
+            </a>
+        </div>
     </div>
 
-    <div id="herocont" @fadeInUp>
-        <p class="herocont1">Arunkumar.</p>
-        <p class="herocont2">MAKING</p>
-        <p class="herocont2">GOOD</p>
-        <p class="herocont3">DESIGN &</p>
-        <p class="herocont3">DEVELOPMENT</p>
-        <p class="herocont2">SINCE</p>
-        <p class="herocont2">2022</p>
-    </div>
-
-
-    <div id="sidemenu">
+    <!-- Side Menu -->
+    <div class="side-menu">
         <button class="theme-toggle" (click)="toggleTheme()" [attr.aria-label]="(isDarkMode$ | async) ? 'Switch to light mode' : 'Switch to dark mode'">
             <svg *ngIf="!(isDarkMode$ | async)" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
@@ -46,150 +78,174 @@
                 <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
             </svg>
         </button>
-        <p class="sidemenucont"><a (click)="scrollToSection('aboutsec')">About</a></p>
-        <p class="sidemenucont"><a (click)="scrollToSection('experiencesec')">Experience</a></p>
-        <p class="sidemenucont"><a (click)="scrollToSection('projectsec')">Projects</a></p>
-        <p class="sidemenucont"><a (click)="scrollToSection('connectsec')">Contact</a></p>
+
+        <nav class="nav-links">
+            <a (click)="scrollToSection('aboutsec')" class="nav-link">About</a>
+            <a (click)="scrollToSection('experiencesec')" class="nav-link">Experience</a>
+            <a (click)="scrollToSection('projectsec')" class="nav-link">Projects</a>
+            <a (click)="scrollToSection('connectsec')" class="nav-link">Contact</a>
+        </nav>
     </div>
 
-
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
     </div>
+</section>
 
-    <div id="aboutsec" appScrollAnimate>
-        <p class="abouthead">About</p>
-        <p class="aboutcont">I am a UI/UX designer and front-end developer. I enjoy making creative designs and solving issues to improve how users experience things. I work hard and promise to give you top-notch work on time, without ever compromising on quality.</p>
-    </div>
+<!-- About Section -->
+<section id="aboutsec" class="section" appScrollAnimate>
+    <div class="section-container">
+        <span class="section-label">About</span>
+        <h2 class="section-title">I craft digital experiences that <span class="gradient-text">make an impact</span></h2>
+        <p class="section-description">
+            I am a UI/UX designer and full-stack developer with 3+ years of experience building complete products.
+            From quick commerce apps to enterprise ERP systems, I handle everything—design, development, and deployment.
+            I work hard and promise to give you top-notch work on time, without ever compromising on quality.
+        </p>
 
-    <!-- <div id="worksec">
-        <p class="workhead">What I do</p>
-        <hr style="width: 100%;">
-        <p class="workcont">UI UX Design</p>
-        <hr style="width: 100%;">
-        <p class="workcont">Logo Design</p>
-        <hr style="width: 100%;">
-        <p class="workcont">Front-end development</p>
-        <hr style="width: 100%;">
-        <p class="workcont">Web development</p>
-        <hr style="width: 100%;">
-    </div> -->
-
-    <app-skillspage></app-skillspage>
-
-    <div id="experiencesec" appScrollAnimate>
-        <p class="abouthead">Experience</p>
-        <p class="aboutcont">I have a strong knowledge of UI/UX design and the front-end development field.
-            I am proficient in using tools like FIGMA, HTML, CSS, JavaScript, Angular, and Framer. In my role as a UI/UX designer,
-            I have contributed to projects such as e-commerce websites, car service websites, a mobile app for booking laundry services, 
-            websites for interior design companies, and pet product websites. Additionally, as a front-end developer, 
-            I have worked on projects including a card memory game website, an employee management website, and the creation of two simple websites.</p>
-    </div>
-
-    <app-experience-journey></app-experience-journey>
-
-    <div id="worksec" appScrollAnimate>
-        <p class="workhead">History</p>
-        <hr style="width: 100%;">
-       <!-- <span class="experiencecol">  -->
-        <p class="experiencecont1">Surfboard payments - <span class="experiencecont3">Internship</span></p>
-        <!-- <span class="experiencecol1">   -->
-        <p class="experiencecont2">UI UX Designer and Front-end developer</p>
-        <p class="experiencecont3">Chennai, India.</p>
-        <!-- </span>
-    </span> -->
-        <hr style="width: 100%;">
-        <p class="experiencecont1">Maven alpha - <span class="experiencecont3">Jun 2022 - Dec 2022</span> </p>
-        <p class="experiencecont2">UI UX Designer and Front-end developer</p>
-        <p class="experiencecont3">Chennai, India.</p>
-        <hr style="width: 100%;">
-        <p class="experiencecont1">Tech cora - <span class="experiencecont3">Now</span> </p>
-        <p class="experiencecont2">UI UX Designer and Front-end developer</p>
-        <p class="experiencecont3">Chennai, India.</p>
-        <hr style="width: 100%;">
-    </div>
-
-    <!-- <div class="container">
-        <app-showproject></app-showproject>
-      </div> -->
-
-    <!-- <div id="designproject">
-        <div class="designheader">
-           <p>UI UX DESIGN PROJECT</p>
-           <span class="designarrowbuttons">
-            <img (click)="moveLeft()" src="/assets/leftarrow.svg">
-            <img (click)="moveRight()" src="/assets/rightarrow.svg">
-           </span>
-        </div>
-        <div class="desginprojectcontainer" >
-        <div class="desginprojectsec" *ngFor="let card of visibleCards">
-        <img [src]="card.imageUrl">
-        <span>
-            <p class="designprojectname">{{ card.title }}</p>
-            <p class="designprojectname1">{{ card.subtitle }}</p>
-        </span>
-        </div>
-        </div>
-        
-    </div> -->
-    <!-- <div id="desisnprojectcont"> -->
-    <app-showproject id="projectsec" [sectionTitle]="'Design & development Projects'" [cards]="designProjects"></app-showproject>
-    <!-- </div> -->
-  <!-- <div id="frontendprojectcont">
-    <app-showproject [sectionTitle]="'Frontend Projects'" [cards]="frontendProjects"></app-showproject>
-</div> -->
-
-
-    <!-- <div id="frontendproject">
-        <div class="designheader">
-           <p>UI UX DESIGN PROJECT</p>
-           <span class="designarrowbuttons">
-            <img (click)="moveLeft()" src="/assets/leftarrow1.svg">
-            <img (click)="moveRight()" src="/assets/rightarrow1.svg">
-           </span>
-        </div>
-        <div class="desginprojectcontainer" >
-        <div class="desginprojectsec" *ngFor="let card of visibleCards">
-        <img [src]="card.imageUrl">
-        <span>
-            <p class="designprojectname">{{ card.title }}</p>
-            <p class="designprojectname1">{{ card.subtitle }}</p>
-        </span>
-        </div>
-        </div>
-        
-    </div> -->
-
-    <div id="connectsec">
-        <p class="workhead">Connect</p>
-
-        <div class="footercont">
-
-<span class="conectlogo">
-        <div class="footercont1">
-            <a href="https://www.behance.net/ruvjp" target="_blank" rel="noopener noreferrer"><span class="conect conect1"><img src="./assets/be.svg">Behance</span></a>
-            <a href="https://www.linkedin.com/in/arun-kumar-937399254/" target="_blank" rel="noopener noreferrer"><span class="conect conect1"><img src="./assets/In.svg">LinkedIn</span> </a>
-        </div>
-
-        <div class="footercont2">
-            <a href="https://instagram.com/_arunvjcopzz_?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D" target="_blank" rel="noopener noreferrer"><span class="conect conect1"><img src="./assets/Ig.svg">Instagram</span></a>
-            <a href="https://dribbble.com/Arunkumar_07" target="_blank" rel="noopener noreferrer"><span class="conect conect1"><img src="./assets/Dr.svg">Dribbble</span> </a>
-        </div>
-</span>
-
-        <div class="footercont3">
-            <span class="emailcont">
-                <p class="emailcont1">Email</p>
-                <p class="emailcont2">futuristicdesigner07@gmail.com</p>
-            </span>
-            <span class="emailcont">
-                <p class="emailcont1">Phone</p>
-                <a href="tel:+918220710738" class="phone-link">
-                    <p class="emailcont2">+91 8220710738 <span class="click-hint">click to call</span></p>
-                </a>
-            </span> 
-        </div>
-
+        <!-- Stats -->
+        <div class="stats-grid">
+            <div class="stat-item glass-card">
+                <span class="stat-number gradient-text">3+</span>
+                <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat-item glass-card">
+                <span class="stat-number gradient-text">15+</span>
+                <span class="stat-label">Projects Completed</span>
+            </div>
+            <div class="stat-item glass-card">
+                <span class="stat-number gradient-text">4+</span>
+                <span class="stat-label">Apps Published</span>
+            </div>
+            <div class="stat-item glass-card">
+                <span class="stat-number gradient-text">10+</span>
+                <span class="stat-label">Technologies</span>
+            </div>
         </div>
     </div>
-</body>
+</section>
 
-</html>
+<!-- Skills Section -->
+<app-skillspage></app-skillspage>
+
+<!-- Experience Description Section -->
+<section id="experiencesec" class="section" appScrollAnimate>
+    <div class="section-container">
+        <span class="section-label">Experience</span>
+        <h2 class="section-title">Building products that <span class="gradient-text">users love</span></h2>
+        <p class="section-description">
+            I have strong knowledge in UI/UX design and full-stack development.
+            Proficient in FIGMA, HTML, CSS, TypeScript, Angular, React Native, Ionic, and Rust.
+            I've built quick commerce platforms, school ERP systems, mental health apps, and POS systems—handling everything from design to deployment solo.
+        </p>
+    </div>
+</section>
+
+<!-- Experience Journey Timeline -->
+<app-experience-journey></app-experience-journey>
+
+<!-- Work History Section -->
+<section id="worksec" class="section" appScrollAnimate>
+    <div class="section-container">
+        <span class="section-label">History</span>
+
+        <div class="history-timeline">
+            <!-- Surfboard Payments -->
+            <div class="history-item glass-card">
+                <div class="history-header">
+                    <h3 class="history-company">Surfboard Payments</h3>
+                    <span class="history-badge">Internship</span>
+                </div>
+                <p class="history-role">UI/UX Designer & Frontend Developer</p>
+                <p class="history-location">Chennai, India</p>
+            </div>
+
+            <!-- Maven Alpha -->
+            <div class="history-item glass-card">
+                <div class="history-header">
+                    <h3 class="history-company">Maven Alpha</h3>
+                    <span class="history-badge">Jun 2022 - Dec 2022</span>
+                </div>
+                <p class="history-role">UI/UX Designer & Frontend Developer</p>
+                <p class="history-location">Chennai, India</p>
+            </div>
+
+            <!-- Techcora -->
+            <div class="history-item glass-card current">
+                <div class="history-header">
+                    <h3 class="history-company">Techcora Corporation</h3>
+                    <span class="history-badge badge-success">
+                        <span class="pulse-dot-small"></span>
+                        Present
+                    </span>
+                </div>
+                <p class="history-role">UI/UX Designer & Full-Stack Developer</p>
+                <p class="history-location">Chennai, India</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Showcase -->
+<app-showproject id="projectsec" [sectionTitle]="'Design & Development Projects'" [cards]="designProjects"></app-showproject>
+
+<!-- Connect Section -->
+<section id="connectsec" class="section">
+    <div class="section-container">
+        <span class="section-label">Contact</span>
+        <h2 class="section-title">Let's <span class="gradient-text">create together</span></h2>
+
+        <div class="connect-grid">
+            <!-- Social Links -->
+            <div class="connect-social">
+                <h3 class="connect-subtitle">Find me on</h3>
+                <div class="social-buttons">
+                    <a href="https://www.behance.net/ruvjp" target="_blank" rel="noopener noreferrer" class="social-btn glow-hover">
+                        <img src="./assets/be.svg" alt="Behance">
+                        <span>Behance</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/arun-kumar-937399254/" target="_blank" rel="noopener noreferrer" class="social-btn glow-hover">
+                        <img src="./assets/In.svg" alt="LinkedIn">
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://instagram.com/_arunvjcopzz_?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D" target="_blank" rel="noopener noreferrer" class="social-btn glow-hover">
+                        <img src="./assets/Ig.svg" alt="Instagram">
+                        <span>Instagram</span>
+                    </a>
+                    <a href="https://dribbble.com/Arunkumar_07" target="_blank" rel="noopener noreferrer" class="social-btn glow-hover">
+                        <img src="./assets/Dr.svg" alt="Dribbble">
+                        <span>Dribbble</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="connect-info">
+                <div class="contact-item">
+                    <span class="contact-label">Email</span>
+                    <a href="mailto:futuristicdesigner07@gmail.com" class="contact-value">
+                        futuristicdesigner07&#64;gmail.com
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">Phone</span>
+                    <a href="tel:+918220710738" class="contact-value phone-link">
+                        +91 8220710738
+                        <span class="click-hint">click to call</span>
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">Location</span>
+                    <span class="contact-value">Neyveli, Cuddalore, India</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Arunkumar. Built with Angular & Firebase.</p>
+    </footer>
+</section>
