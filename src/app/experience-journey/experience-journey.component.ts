@@ -112,8 +112,33 @@ export class ExperienceJourneyComponent {
         },
         {
           name: 'CoraERP',
-          description: 'Comprehensive School ERP system with 9 modules: Student, Teacher, Attendance, HR, Bus, Inventory, Employee, Estate Management, and Excel import/export. Built with Rust backend.',
+          description: 'Comprehensive School ERP system with multiple modules including Student, Teacher, Attendance, HR, Bus, Inventory, Employee, Estate Management, Excel import/export, and more. Built with Rust backend.',
           skills: ['UI/UX Design', 'Angular', 'Rust', 'PostgreSQL', 'ERP Systems', 'Data Management']
+        },
+        {
+          name: 'Vignesh Homes Website',
+          description: 'Designed UI/UX and developed front-end for a construction website displaying ongoing, completed, and upcoming projects with locations. Backend powered by Firebase.',
+          skills: ['UI/UX Design', 'Angular', 'Firebase DB', 'Firebase Hosting', 'Responsive Design']
+        },
+        {
+          name: 'Grace Auto Service ERP',
+          description: 'Designed UI/UX and developed front-end for invoice ERP system with simple, intuitive interface. Firebase backend handles data and cloud functions.',
+          skills: ['UI/UX Design', 'Angular', 'Firebase DB', 'Firebase Functions', 'ERP Systems']
+        },
+        {
+          name: 'Techcora Company Website',
+          description: 'Designed and developed company website with colorful aesthetics and GSAP animations. Deployed on Firebase Hosting.',
+          skills: ['UI/UX Design', 'Angular', 'GSAP', 'Firebase Hosting', 'Animation']
+        },
+        {
+          name: 'Junior Mastery School ERP',
+          description: 'Designed UI/UX and developed ERP showing students marks, attendance, and performance tracking. Firebase handles database and real-time updates.',
+          skills: ['UI/UX Design', 'Angular', 'Firebase DB', 'Firebase Functions', 'Data Visualization']
+        },
+        {
+          name: 'Church Management App',
+          description: 'Designed and developed mobile and web application to connect community through events, prayers, and sharing. Firebase backend for real-time features.',
+          skills: ['UI/UX Design', 'Angular', 'Mobile Design', 'Firebase DB', 'Firebase Functions']
         }
       ]
     }
