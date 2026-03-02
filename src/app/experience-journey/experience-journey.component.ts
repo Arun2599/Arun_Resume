@@ -96,29 +96,24 @@ export class ExperienceJourneyComponent {
       isExpanded: false,
       projects: [
         {
-          name: 'Vignesh Homes Website',
-          description: 'Designed UI/UX and developed front-end for a construction website displaying ongoing, completed, and upcoming projects with locations. Backend powered by Firebase.',
-          skills: ['UI/UX Design', 'Angular', 'Firebase DB', 'Firebase Hosting', 'Responsive Design']
+          name: 'Quick Commerce Platform',
+          description: 'Built complete quick commerce ecosystem for supermarkets including Chikpuk, Nilgiris, Monthly Mart, and BigSave. Developed consumer app, delivery partner app, and merchant dashboard with real-time tracking.',
+          skills: ['UI/UX Design', 'Ionic', 'Angular', 'Firebase', 'Play Store', 'App Store']
         },
         {
-          name: 'Grace Auto Service ERP',
-          description: 'Designed UI/UX and developed front-end for invoice ERP system with simple, intuitive interface. Firebase backend handles data and cloud functions.',
-          skills: ['UI/UX Design', 'Angular', 'Firebase DB', 'Firebase Functions', 'ERP Systems']
+          name: 'CoraSuperPos',
+          description: 'Designed and developed Point of Sale system for supermarkets with billing, inventory sync, barcode scanning, and sales tracking. Available on mobile and web platforms.',
+          skills: ['UI/UX Design', 'Ionic', 'Angular', 'Firebase', 'POS Systems', 'Barcode Integration']
         },
         {
-          name: 'Techcora Company Website',
-          description: 'Designed and developed company website with colorful aesthetics and GSAP animations. Deployed on Firebase Hosting.',
-          skills: ['UI/UX Design', 'Angular', 'GSAP', 'Firebase Hosting', 'Animation']
+          name: 'Innerplay',
+          description: 'Mental health and performance app for young athletes. Features psychological assessments, personalized daily activities including box breathing, visualization, affirmations, and progress tracking.',
+          skills: ['UI/UX Design', 'React Native', 'Firebase', 'Health & Wellness', 'Personalization']
         },
         {
-          name: 'Junior Mastery School ERP',
-          description: 'Designed UI/UX and developed ERP showing students marks, attendance, and performance tracking. Firebase handles database and real-time updates.',
-          skills: ['UI/UX Design', 'Angular', 'Firebase DB', 'Firebase Functions', 'Data Visualization']
-        },
-        {
-          name: 'Church Management App',
-          description: 'Designed and developed mobile and web application to connect community through events, prayers, and sharing. Firebase backend for real-time features.',
-          skills: ['UI/UX Design', 'Angular', 'Mobile Design', 'Firebase DB', 'Firebase Functions']
+          name: 'CoraERP',
+          description: 'Comprehensive School ERP system with 9 modules: Student, Teacher, Attendance, HR, Bus, Inventory, Employee, Estate Management, and Excel import/export. Built with Rust backend.',
+          skills: ['UI/UX Design', 'Angular', 'Rust', 'PostgreSQL', 'ERP Systems', 'Data Management']
         }
       ]
     }
