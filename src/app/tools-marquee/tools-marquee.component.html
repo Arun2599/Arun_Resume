@@ -9,7 +9,7 @@
     <div class="marquee-track">
       <div class="marquee-content animate-left">
         <div class="tool-card" *ngFor="let tool of duplicatedTools">
-          <span class="tool-icon">{{ tool.icon }}</span>
+          <img class="tool-logo" [src]="tool.logo" [alt]="tool.name" loading="lazy">
           <span class="tool-name">{{ tool.name }}</span>
         </div>
       </div>
@@ -19,7 +19,7 @@
     <div class="marquee-track">
       <div class="marquee-content animate-right">
         <div class="tool-card" *ngFor="let tool of duplicatedTools">
-          <span class="tool-icon">{{ tool.icon }}</span>
+          <img class="tool-logo" [src]="tool.logo" [alt]="tool.name" loading="lazy">
           <span class="tool-name">{{ tool.name }}</span>
         </div>
       </div>

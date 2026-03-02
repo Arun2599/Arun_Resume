@@ -154,9 +154,11 @@
     box-shadow: var(--shadow-glow);
 }
 
-.tool-icon {
-    font-size: 1.5rem;
-    line-height: 1;
+.tool-logo {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    flex-shrink: 0;
 }
 
 .tool-name {
@@ -230,8 +232,9 @@ body.dark-theme .tool-card:hover {
         gap: 0.5rem;
     }
 
-    .tool-icon {
-        font-size: 1.25rem;
+    .tool-logo {
+        width: 22px;
+        height: 22px;
     }
 
     .tool-name {
