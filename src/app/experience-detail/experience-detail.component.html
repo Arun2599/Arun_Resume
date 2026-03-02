@@ -1,0 +1,97 @@
+<div class="experience-detail" *ngIf="currentExperience" [@fadeIn]>
+  <!-- Header -->
+  <header class="detail-header">
+    <button class="back-btn" (click)="goBack()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+      <span>Back</span>
+    </button>
+
+    <div class="header-center">
+      <span class="company-icon">{{ currentExperience.icon }}</span>
+      <div class="company-info">
+        <h1 class="company-name">{{ currentExperience.company }}</h1>
+        <p class="company-role">{{ currentExperience.role }}</p>
+      </div>
+    </div>
+
+    <div class="header-right">
+      <div class="counter">
+        <span class="counter-current">{{ (currentProjectIndex + 1).toString().padStart(2, '0') }}</span>
+        <span class="counter-divider">/</span>
+        <span class="counter-total">{{ totalProjects.toString().padStart(2, '0') }}</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="detail-content"
+        (mouseenter)="pauseCarousel()"
+        (mouseleave)="resumeCarousel()"
+        (touchstart)="onTouchStart($event)"
+        (touchend)="onTouchEnd($event)">
+
+    <!-- Navigation Arrows - Desktop -->
+    <button class="nav-btn nav-prev" (click)="prevProject()" [class.hidden]="totalProjects <= 1">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+
+    <!-- Cards Carousel -->
+    <div class="carousel-container">
+      <div class="cards-track" [style.transform]="'translateX(calc(50% - 160px + ' + getTrackOffset() + 'px))'">
+        <div
+          class="project-card"
+          *ngFor="let project of currentExperience.projects; let i = index"
+          [class.active]="i === currentProjectIndex"
+          [class.prev]="i < currentProjectIndex"
+          [class.next]="i > currentProjectIndex"
+          (click)="goToProject(i)"
+        >
+          <!-- Card Image -->
+          <div class="card-image" [style.background-image]="'url(' + project.image + ')'">
+            <div class="card-gradient" [style.background]="'linear-gradient(180deg, transparent 20%, ' + project.color + ' 100%)'"></div>
+            <div class="card-image-content">
+              <h2 class="project-name">{{ project.name }}</h2>
+              <div class="project-highlights">
+                <span class="highlight" *ngFor="let h of project.highlights" [style.border-color]="project.color">{{ h }}</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Body -->
+          <div class="card-body">
+            <p class="project-description">{{ project.description }}</p>
+            <div class="project-skills">
+              <span class="skill" *ngFor="let skill of project.skills">{{ skill }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Arrows - Desktop -->
+    <button class="nav-btn nav-next" (click)="nextProject()" [class.hidden]="totalProjects <= 1">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </button>
+  </main>
+
+  <!-- Pagination Dots -->
+  <footer class="detail-footer">
+    <div class="pagination-dots">
+      <button
+        class="dot"
+        *ngFor="let project of currentExperience.projects; let i = index"
+        [class.active]="i === currentProjectIndex"
+        (click)="goToProject(i)"
+      >
+        <span class="dot-progress" [class.running]="i === currentProjectIndex && !isCarouselPaused"></span>
+      </button>
+    </div>
+    <p class="swipe-hint">Swipe or use arrow keys to navigate</p>
+  </footer>
+</div>

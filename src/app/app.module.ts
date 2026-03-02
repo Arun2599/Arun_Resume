@@ -17,6 +17,7 @@ import { environment } from '../environments/environment';
 import { ExperienceJourneyComponent } from './experience-journey/experience-journey.component';
 import { ToolsMarqueeComponent } from './tools-marquee/tools-marquee.component';
 import { TestimonialsComponent } from './testimonials/testimonials.component';
+import { ExperienceDetailComponent } from './experience-detail/experience-detail.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import { TestimonialsComponent } from './testimonials/testimonials.component';
     ScrollAnimateDirective,
     ExperienceJourneyComponent,
     ToolsMarqueeComponent,
-    TestimonialsComponent
+    TestimonialsComponent,
+    ExperienceDetailComponent
   ],
   imports: [
     BrowserModule,

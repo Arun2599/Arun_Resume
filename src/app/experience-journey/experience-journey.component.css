@@ -1,30 +1,16 @@
 /* ============================================
-   EXPERIENCE JOURNEY - 2026 TIMELINE DESIGN
+   EXPERIENCE JOURNEY - COMPANY CARDS
    ============================================ */
 
 #journey-section {
     display: flex;
-    padding: clamp(4rem, 10vh, 8rem) clamp(1.5rem, 8vw, 12rem);
+    padding: clamp(4rem, 10vh, 8rem) clamp(1.5rem, 5vw, 4rem);
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     gap: 3rem;
-    background: var(--section-secondary);
-    transition: background var(--duration-normal) var(--ease-out);
-    position: relative;
-    overflow: hidden;
-}
-
-/* Background Gradient Orb */
-#journey-section::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -20%;
-    width: 60%;
-    height: 100%;
-    background: radial-gradient(ellipse, rgba(139, 92, 246, 0.08) 0%, transparent 70%);
-    pointer-events: none;
+    background: var(--bg-primary);
+    min-height: 100vh;
 }
 
 /* ============================================
@@ -32,376 +18,190 @@
    ============================================ */
 
 .journey-header {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+    text-align: center;
+    max-width: 700px;
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
 }
 
-.journey-title {
+.section-label {
     font-size: var(--text-sm);
     font-weight: 600;
     color: var(--accent-primary);
     text-transform: uppercase;
     letter-spacing: var(--tracking-wider);
-    margin: 0;
 }
 
-.journey-subtitle {
-    font-size: clamp(1.75rem, 4vw, 2.5rem);
+.section-title {
+    font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 700;
     color: var(--text-primary);
-    line-height: var(--leading-snug);
+    line-height: var(--leading-tight);
+    margin: 0;
+}
+
+.gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.section-subtitle {
+    font-size: var(--text-base);
+    color: var(--text-secondary);
     margin: 0;
 }
 
 /* ============================================
-   TIMELINE STRUCTURE
+   COMPANY CARDS
    ============================================ */
 
-.timeline-container {
+.companies-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
-    position: relative;
-    padding-left: 50px;
 }
 
-.timeline-line {
-    position: absolute;
-    left: 20px;
-    top: 30px;
-    bottom: 30px;
-    width: 2px;
-    background: var(--gradient-primary);
-    opacity: 0.3;
-    transition: all var(--duration-normal) var(--ease-out);
-}
-
-/* Animated glow on timeline */
-.timeline-line::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -2px;
-    right: -2px;
-    height: 100px;
-    background: linear-gradient(to bottom, var(--accent-primary), transparent);
-    border-radius: 4px;
-    animation: timelineGlow 3s ease-in-out infinite;
-}
-
-@keyframes timelineGlow {
-    0%, 100% {
-        transform: translateY(0);
-        opacity: 0.6;
-    }
-    50% {
-        transform: translateY(calc(100% + 100px));
-        opacity: 0.3;
-    }
-}
-
-/* ============================================
-   EXPERIENCE CARDS
-   ============================================ */
-
-.experience-card {
-    position: relative;
-    margin-bottom: 1.5rem;
-    background: var(--glass-bg);
+.company-card {
+    background: var(--bg-card);
     border: 1px solid var(--glass-border);
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(var(--glass-blur));
-    border-radius: var(--radius-2xl);
-    padding: 1.75rem 2rem;
+    border-radius: 24px;
+    padding: 2rem;
     cursor: pointer;
-    transition: all var(--duration-normal) var(--ease-out);
-    box-shadow: var(--shadow-sm);
+    transition: all 0.4s ease;
 }
 
-/* Gradient border on hover */
-.experience-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: var(--gradient-primary);
-    border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
-    opacity: 0;
-    transition: opacity var(--duration-normal);
-}
-
-.experience-card:hover {
-    transform: translateX(8px);
+.company-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
     border-color: var(--accent-primary);
-    box-shadow: var(--shadow-lg);
 }
 
-.experience-card:hover::before {
-    opacity: 1;
-}
-
-.experience-card.expanded {
-    transform: translateX(8px);
-    border-color: var(--accent-primary);
-    box-shadow: var(--shadow-glow);
-}
-
-.experience-card.expanded::before {
-    opacity: 1;
-}
-
-/* ============================================
-   CARD HEADER
-   ============================================ */
-
-.card-header {
+.card-inner {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     gap: 1.25rem;
-    position: relative;
 }
 
-.timeline-dot {
-    position: absolute;
-    left: -72px;
-    width: 44px;
-    height: 44px;
+.company-icon-wrapper {
+    width: 56px;
+    height: 56px;
     background: var(--gradient-primary);
-    border-radius: 50%;
+    border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: var(--shadow-glow);
-    transition: all var(--duration-normal) var(--ease-out);
-    border: 3px solid var(--section-secondary);
-    z-index: 2;
-}
-
-.experience-card:hover .timeline-dot,
-.experience-card.expanded .timeline-dot {
-    transform: scale(1.15);
-    box-shadow: 0 0 30px rgba(139, 92, 246, 0.6);
 }
 
 .company-icon {
-    font-size: 1.25rem;
+    font-size: 1.75rem;
 }
 
-.card-header-content {
-    flex: 1;
+.company-details {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-}
-
-.company-info {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    flex-wrap: wrap;
+    gap: 0.375rem;
 }
 
 .company-name {
-    font-size: var(--text-2xl);
+    font-size: var(--text-xl);
     font-weight: 700;
     color: var(--text-primary);
     margin: 0;
-    transition: color var(--duration-normal);
+}
+
+.company-role {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.period-info {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
 }
 
 .period-badge {
     padding: 0.375rem 0.875rem;
     background: rgba(139, 92, 246, 0.1);
     border: 1px solid rgba(139, 92, 246, 0.2);
-    border-radius: var(--radius-full);
-    color: var(--accent-primary);
+    border-radius: 20px;
     font-size: var(--text-sm);
     font-weight: 500;
-    transition: all var(--duration-normal);
-}
-
-.experience-card:hover .period-badge,
-.experience-card.expanded .period-badge {
-    background: rgba(139, 92, 246, 0.2);
-    border-color: var(--accent-primary);
-}
-
-.role-title {
-    color: var(--text-secondary);
-    font-size: var(--text-lg);
-    font-weight: 400;
-    margin: 0;
-    transition: color var(--duration-normal);
-}
-
-/* ============================================
-   EXPAND INDICATOR
-   ============================================ */
-
-.expand-indicator {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: rgba(139, 92, 246, 0.1);
-    border: 1px solid rgba(139, 92, 246, 0.2);
-    transition: all var(--duration-normal);
-    flex-shrink: 0;
-}
-
-.expand-indicator svg {
     color: var(--accent-primary);
-    transition: transform var(--duration-normal) var(--ease-out);
 }
 
-.expand-indicator.rotated svg {
-    transform: rotate(180deg);
+.period-badge.present {
+    background: rgba(16, 185, 129, 0.1);
+    border-color: rgba(16, 185, 129, 0.3);
+    color: #10B981;
+    padding-left: 1.5rem;
+    position: relative;
 }
 
-.experience-card:hover .expand-indicator {
-    background: rgba(139, 92, 246, 0.2);
-    border-color: var(--accent-primary);
-}
-
-/* ============================================
-   CARD CONTENT (EXPANDED)
-   ============================================ */
-
-.card-content {
-    margin-top: 1.5rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--glass-border);
-}
-
-.projects-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-}
-
-.project-item {
-    padding: 1.25rem;
-    background: rgba(139, 92, 246, 0.05);
-    border-radius: var(--radius-xl);
-    border-left: 3px solid var(--accent-primary);
-    transition: all var(--duration-normal) var(--ease-out);
-}
-
-.project-item:hover {
-    background: rgba(139, 92, 246, 0.1);
-    transform: translateX(4px);
-}
-
-.project-header {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 0.75rem;
-}
-
-.project-dot {
-    width: 8px;
-    height: 8px;
-    background: var(--gradient-primary);
+.period-badge.present::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    background: #10B981;
     border-radius: 50%;
-    flex-shrink: 0;
-    box-shadow: 0 0 8px rgba(139, 92, 246, 0.5);
+    animation: pulse 2s infinite;
 }
 
-.project-name {
-    font-size: var(--text-lg);
-    font-weight: 600;
-    color: var(--text-primary);
-    margin: 0;
-    transition: color var(--duration-normal);
+@keyframes pulse {
+    0%, 100% { opacity: 1; transform: translateY(-50%) scale(1); }
+    50% { opacity: 0.5; transform: translateY(-50%) scale(1.3); }
 }
 
-.project-description {
-    color: var(--text-secondary);
-    font-size: var(--text-base);
-    font-weight: 400;
-    line-height: var(--leading-relaxed);
-    margin: 0 0 1rem 1.25rem;
-    transition: color var(--duration-normal);
-}
-
-/* ============================================
-   SKILL TAGS
-   ============================================ */
-
-.skills-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-left: 1.25rem;
-}
-
-.skill-tag {
-    padding: 0.375rem 0.75rem;
-    background: rgba(139, 92, 246, 0.1);
-    border: 1px solid rgba(139, 92, 246, 0.2);
-    border-radius: var(--radius-full);
-    color: var(--accent-primary);
-    font-size: var(--text-xs);
-    font-weight: 500;
-    transition: all var(--duration-fast);
-}
-
-.skill-tag:hover {
-    background: rgba(139, 92, 246, 0.2);
-    border-color: var(--accent-primary);
-    transform: translateY(-2px) scale(1.05);
-}
-
-/* ============================================
-   DARK THEME ADJUSTMENTS
-   ============================================ */
-
-body.dark-theme #journey-section {
-    background: var(--section-secondary);
-}
-
-body.dark-theme .timeline-dot {
-    border-color: var(--section-secondary);
-}
-
-body.dark-theme .experience-card {
+.duration-badge {
+    padding: 0.375rem 0.875rem;
     background: var(--glass-bg);
-    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
 }
 
-body.dark-theme .experience-card:hover,
-body.dark-theme .experience-card.expanded {
-    box-shadow: var(--shadow-glow);
+.projects-preview {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
 }
 
-body.dark-theme .timeline-line {
-    opacity: 0.25;
+.projects-count {
+    font-size: 2rem;
+    font-weight: 700;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
-body.dark-theme .project-item {
-    background: rgba(124, 58, 237, 0.08);
+.projects-label {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
 }
 
-body.dark-theme .project-item:hover {
-    background: rgba(124, 58, 237, 0.12);
+/* ============================================
+   DARK THEME (Light Mode)
+   ============================================ */
+
+body.dark-theme .company-card {
+    background: #fff;
 }
 
-body.dark-theme .skill-tag {
-    background: rgba(124, 58, 237, 0.08);
-    border-color: rgba(124, 58, 237, 0.15);
-}
-
-body.dark-theme .skill-tag:hover {
-    background: rgba(124, 58, 237, 0.15);
+body.dark-theme .duration-badge {
+    background: rgba(0, 0, 0, 0.05);
+    border-color: rgba(0, 0, 0, 0.1);
 }
 
 /* ============================================
@@ -410,99 +210,26 @@ body.dark-theme .skill-tag:hover {
 
 @media (max-width: 767px) {
     #journey-section {
-        padding: 3rem 1.5rem;
+        padding: 3rem 1rem;
         gap: 2rem;
     }
 
-    .journey-subtitle {
-        font-size: var(--text-xl);
+    .section-title {
+        font-size: 1.75rem;
     }
 
-    .timeline-container {
-        padding-left: 35px;
-    }
-
-    .timeline-line {
-        left: 14px;
-    }
-
-    .timeline-line::before {
-        height: 60px;
-    }
-
-    .timeline-dot {
-        left: -50px;
-        width: 32px;
-        height: 32px;
-    }
-
-    .company-icon {
-        font-size: 0.875rem;
-    }
-
-    .experience-card {
-        padding: 1.25rem;
-        margin-bottom: 1rem;
-    }
-
-    .experience-card:hover,
-    .experience-card.expanded {
-        transform: translateX(4px);
-    }
-
-    .card-header {
+    .companies-grid {
+        grid-template-columns: 1fr;
         gap: 1rem;
     }
 
-    .company-name {
-        font-size: var(--text-lg);
+    .company-card {
+        padding: 1.5rem;
     }
 
-    .period-badge {
-        font-size: var(--text-xs);
-        padding: 0.25rem 0.625rem;
-    }
-
-    .role-title {
-        font-size: var(--text-sm);
-    }
-
-    .expand-indicator {
-        width: 32px;
-        height: 32px;
-    }
-
-    .expand-indicator svg {
-        width: 18px;
-        height: 18px;
-    }
-
-    .card-content {
-        margin-top: 1rem;
-        padding-top: 1rem;
-    }
-
-    .project-item {
-        padding: 1rem;
-    }
-
-    .project-name {
-        font-size: var(--text-base);
-    }
-
-    .project-description {
-        font-size: var(--text-sm);
-        margin: 0 0 0.75rem 1rem;
-    }
-
-    .skills-container {
-        margin-left: 1rem;
-        gap: 0.375rem;
-    }
-
-    .skill-tag {
-        font-size: 0.625rem;
-        padding: 0.25rem 0.5rem;
+    .company-icon-wrapper {
+        width: 48px;
+        height: 48px;
     }
 }
 
@@ -512,54 +239,11 @@ body.dark-theme .skill-tag:hover {
 
 @media (min-width: 768px) and (max-width: 1023px) {
     #journey-section {
-        padding: 5rem 3rem;
-        gap: 2.5rem;
+        padding: 4rem 2rem;
     }
 
-    .journey-subtitle {
-        font-size: var(--text-2xl);
-    }
-
-    .timeline-container {
-        padding-left: 40px;
-    }
-
-    .timeline-line {
-        left: 16px;
-    }
-
-    .timeline-dot {
-        left: -58px;
-        width: 38px;
-        height: 38px;
-    }
-
-    .company-icon {
-        font-size: 1rem;
-    }
-
-    .company-name {
-        font-size: var(--text-xl);
-    }
-
-    .period-badge {
-        font-size: var(--text-xs);
-    }
-
-    .role-title {
-        font-size: var(--text-base);
-    }
-
-    .project-name {
-        font-size: var(--text-base);
-    }
-
-    .project-description {
-        font-size: var(--text-sm);
-    }
-
-    .skill-tag {
-        font-size: var(--text-xs);
+    .companies-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -569,20 +253,6 @@ body.dark-theme .skill-tag:hover {
 
 @media (min-width: 1440px) {
     #journey-section {
-        padding: 6rem 15%;
-    }
-
-    .timeline-container {
-        padding-left: 60px;
-    }
-
-    .timeline-dot {
-        left: -82px;
-        width: 48px;
-        height: 48px;
-    }
-
-    .company-icon {
-        font-size: 1.5rem;
+        padding: 6rem 10%;
     }
 }

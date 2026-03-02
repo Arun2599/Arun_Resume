@@ -1,0 +1,520 @@
+/* ============================================
+   EXPERIENCE DETAIL - FULL SCREEN VIEW
+   ============================================ */
+
+.experience-detail {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-primary);
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+
+.detail-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--glass-border);
+  flex-shrink: 0;
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1rem;
+  background: transparent;
+  border: 1px solid var(--glass-border);
+  border-radius: 100px;
+  color: var(--text-primary);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  color: white;
+}
+
+.header-center {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.company-icon {
+  font-size: 2rem;
+  width: 48px;
+  height: 48px;
+  background: var(--gradient-primary);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.company-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.company-name {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.company-role {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.counter {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+}
+
+.counter-current {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.counter-divider {
+  font-size: var(--text-lg);
+  color: var(--text-muted);
+}
+
+.counter-total {
+  font-size: var(--text-lg);
+  color: var(--text-muted);
+}
+
+/* ============================================
+   MAIN CONTENT
+   ============================================ */
+
+.detail-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 2rem 0;
+}
+
+/* Navigation Buttons */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 56px;
+  height: 56px;
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  color: var(--text-primary);
+}
+
+.nav-btn:hover {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  color: white;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.nav-prev { left: 2rem; }
+.nav-next { right: 2rem; }
+
+.nav-btn.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Carousel Container */
+.carousel-container {
+  width: 100%;
+  overflow: visible;
+}
+
+.cards-track {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+/* ============================================
+   PROJECT CARD
+   ============================================ */
+
+.project-card {
+  flex-shrink: 0;
+  width: 320px;
+  height: 520px;
+  background: var(--bg-card);
+  border-radius: 24px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--glass-border);
+}
+
+.project-card.prev,
+.project-card.next {
+  transform: scale(0.85);
+  opacity: 0.4;
+}
+
+.project-card.active {
+  transform: scale(1);
+  opacity: 1;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Image Section */
+.card-image {
+  position: relative;
+  height: 240px;
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.card-gradient {
+  position: absolute;
+  inset: 0;
+  opacity: 0.95;
+}
+
+.card-image-content {
+  position: relative;
+  z-index: 1;
+  padding: 1.5rem;
+  color: white;
+}
+
+.project-name {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  margin: 0 0 0.75rem 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.project-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.highlight {
+  padding: 0.25rem 0.75rem;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 100px;
+  font-size: var(--text-xs);
+  font-weight: 500;
+  backdrop-filter: blur(4px);
+}
+
+/* Card Body */
+.card-body {
+  flex: 1;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.project-description {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0;
+  flex: 1;
+}
+
+.project-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.skill {
+  padding: 0.375rem 0.75rem;
+  background: var(--glass-bg);
+  border-radius: 100px;
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+}
+
+/* ============================================
+   FOOTER / PAGINATION
+   ============================================ */
+
+.detail-footer {
+  padding: 1.5rem 2rem;
+  border-top: 1px solid var(--glass-border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.pagination-dots {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 40px;
+  height: 4px;
+  background: var(--glass-border);
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s ease;
+}
+
+.dot:hover {
+  background: var(--text-muted);
+}
+
+.dot.active {
+  background: rgba(139, 92, 246, 0.3);
+}
+
+.dot-progress {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background: var(--accent-primary);
+  border-radius: 2px;
+}
+
+.dot-progress.running {
+  animation: fillProgress 2s linear forwards;
+}
+
+@keyframes fillProgress {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+.swipe-hint {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ============================================
+   DARK THEME (Light Mode)
+   ============================================ */
+
+body.dark-theme .project-card {
+  background: #fff;
+}
+
+body.dark-theme .skill {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+body.dark-theme .dot {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+body.dark-theme .dot.active {
+  background: rgba(139, 92, 246, 0.2);
+}
+
+/* ============================================
+   RESPONSIVE - MOBILE
+   ============================================ */
+
+@media (max-width: 767px) {
+  .detail-header {
+    padding: 1rem;
+    position: relative;
+  }
+
+  .back-btn {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .back-btn span {
+    display: none;
+  }
+
+  .header-center {
+    position: static;
+    transform: none;
+    flex: 1;
+    justify-content: center;
+    margin: 0 0.5rem;
+  }
+
+  .company-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+
+  .company-name {
+    font-size: var(--text-base);
+  }
+
+  .company-role {
+    font-size: var(--text-xs);
+    display: none;
+  }
+
+  .counter-current {
+    font-size: var(--text-xl);
+  }
+
+  .detail-content {
+    padding: 1rem 0;
+  }
+
+  .nav-btn {
+    display: none;
+  }
+
+  .cards-track {
+    gap: 16px;
+    padding: 0 1rem;
+  }
+
+  .project-card {
+    width: 280px;
+    height: 460px;
+  }
+
+  .project-card.prev,
+  .project-card.next {
+    transform: scale(0.9);
+    opacity: 0.5;
+  }
+
+  .card-image {
+    height: 200px;
+  }
+
+  .card-image-content {
+    padding: 1rem;
+  }
+
+  .project-name {
+    font-size: var(--text-lg);
+  }
+
+  .card-body {
+    padding: 1rem;
+  }
+
+  .detail-footer {
+    padding: 1rem;
+  }
+
+  .dot {
+    width: 28px;
+    height: 3px;
+  }
+}
+
+/* ============================================
+   RESPONSIVE - TABLET
+   ============================================ */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .detail-header {
+    padding: 1rem 1.5rem;
+  }
+
+  .nav-prev { left: 1rem; }
+  .nav-next { right: 1rem; }
+
+  .nav-btn {
+    width: 48px;
+    height: 48px;
+  }
+
+  .project-card {
+    width: 300px;
+    height: 480px;
+  }
+}
+
+/* ============================================
+   RESPONSIVE - LARGE DESKTOP
+   ============================================ */
+
+@media (min-width: 1440px) {
+  .detail-header {
+    padding: 1.5rem 4rem;
+  }
+
+  .nav-prev { left: 4rem; }
+  .nav-next { right: 4rem; }
+
+  .nav-btn {
+    width: 64px;
+    height: 64px;
+  }
+
+  .project-card {
+    width: 380px;
+    height: 580px;
+  }
+
+  .card-image {
+    height: 280px;
+  }
+
+  .detail-footer {
+    padding: 2rem 4rem;
+  }
+
+  .dot {
+    width: 48px;
+  }
+}
