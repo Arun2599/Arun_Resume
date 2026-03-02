@@ -28,11 +28,19 @@
    ============================================ */
 
 .hero-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1.5rem clamp(2rem, 5vw, 6rem);
-    z-index: 100;
+    padding: 1rem clamp(2rem, 5vw, 6rem);
+    z-index: 1000;
+    background: var(--bg-primary);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--glass-border);
+    transition: all var(--duration-normal) var(--ease-out);
 }
 
 .logo {
@@ -118,7 +126,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
-    padding: 2rem clamp(2rem, 5vw, 6rem) 4rem;
+    padding: 6rem clamp(2rem, 5vw, 6rem) 4rem;
     align-items: center;
     max-width: 1600px;
     margin: 0 auto;
@@ -628,6 +636,7 @@ a.contact-row:hover {
 .section-container {
     max-width: 1200px;
     margin: 0 auto;
+    text-align: center;
 }
 
 .section-label {
@@ -654,6 +663,16 @@ a.contact-row:hover {
     color: var(--text-secondary);
     line-height: var(--leading-relaxed);
     max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-subtitle {
+    font-size: clamp(0.95rem, 2vw, 1.15rem);
+    font-weight: 400;
+    color: var(--text-secondary);
+    line-height: var(--leading-relaxed);
+    margin-bottom: 0.5rem;
 }
 
 /* ============================================
@@ -697,11 +716,15 @@ a.contact-row:hover {
     flex-direction: column;
     gap: 1.5rem;
     margin-top: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .history-item {
     padding: 1.5rem 2rem;
     transition: all var(--duration-normal) var(--ease-out);
+    text-align: left;
 }
 
 .history-item:hover {
@@ -870,7 +893,7 @@ a.contact-value:hover {
 
 @media (max-width: 767px) {
     .hero-navbar {
-        padding: 1rem 1.5rem;
+        padding: 0.75rem 1.5rem;
     }
 
     .nav-center {
@@ -880,7 +903,7 @@ a.contact-value:hover {
     .hero-split {
         grid-template-columns: 1fr;
         gap: 2rem;
-        padding: 1rem 1.5rem 3rem;
+        padding: 5rem 1.5rem 3rem;
     }
 
     .hero-content {
@@ -995,6 +1018,11 @@ a.contact-value:hover {
         align-items: flex-start;
         gap: 0.5rem;
     }
+
+    /* Hide click to call hint on mobile */
+    .phone-link .click-hint {
+        display: none;
+    }
 }
 
 /* ============================================
@@ -1003,7 +1031,7 @@ a.contact-value:hover {
 
 @media (min-width: 768px) and (max-width: 1023px) {
     .hero-navbar {
-        padding: 1.25rem 2rem;
+        padding: 0.85rem 2rem;
     }
 
     .nav-center {
@@ -1012,7 +1040,7 @@ a.contact-value:hover {
 
     .hero-split {
         gap: 2rem;
-        padding: 1.5rem 2rem 3rem;
+        padding: 5.5rem 2rem 3rem;
     }
 
     .hero-title {
@@ -1037,6 +1065,16 @@ a.contact-value:hover {
 
     .connect-grid {
         gap: 2rem;
+    }
+
+    /* Hide click to call hint on tablet */
+    .phone-link .click-hint {
+        display: none;
+    }
+
+    /* Hide scroll indicator on tablet */
+    .scroll-indicator {
+        display: none;
     }
 }
 
