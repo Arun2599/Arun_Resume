@@ -1,12 +1,12 @@
 /* ============================================
-   PROJECTS SHOWCASE SECTION - 2026 DESIGN
+   PROJECTS SHOWCASE SECTION - SMOOTH MARQUEE
    ============================================ */
 
 #projectcont {
     height: 100%;
     width: auto;
     display: flex;
-    padding: clamp(4rem, 10vh, 8rem) clamp(1.5rem, 8vw, 12rem);
+    padding: clamp(4rem, 10vh, 8rem) 0;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
@@ -43,6 +43,7 @@
     justify-content: space-between;
     position: relative;
     z-index: 1;
+    padding: 0 clamp(1.5rem, 8vw, 12rem);
 }
 
 .projectheader p {
@@ -54,73 +55,72 @@
 }
 
 /* ============================================
-   ARROW BUTTONS
+   MARQUEE TRACK
    ============================================ */
 
-.projectarrowbuttons {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    z-index: 2;
-}
-
-.projectarrowbuttons img {
-    cursor: pointer;
-    transition: all var(--duration-normal) var(--ease-out);
-    padding: 0.75rem;
-    border-radius: 50%;
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    filter: brightness(1);
-}
-
-.projectarrowbuttons img:hover {
-    background: rgba(139, 92, 246, 0.2);
-    border-color: var(--accent-primary);
-    transform: scale(1.1);
-    box-shadow: var(--shadow-glow);
-}
-
-/* ============================================
-   PROJECT CONTAINER
-   ============================================ */
-
-.projectcontainer {
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    gap: 1.5rem;
+.marquee-track {
     width: 100%;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    padding: 1rem 0;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+    overflow: hidden;
+    position: relative;
 }
 
-.projectcontainer::-webkit-scrollbar {
-    display: none;
+/* Fade edges */
+.marquee-track::before,
+.marquee-track::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 150px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.marquee-track::before {
+    left: 0;
+    background: linear-gradient(to right, var(--section-secondary), transparent);
+}
+
+.marquee-track::after {
+    right: 0;
+    background: linear-gradient(to left, var(--section-secondary), transparent);
 }
 
 /* ============================================
-   PROGRESS BAR
+   MARQUEE CONTENT - SMOOTH ANIMATION
    ============================================ */
 
-.progress-container {
-    width: 50%;
-    max-width: 300px;
-    height: 4px;
-    background: var(--glass-border);
-    border-radius: var(--radius-full);
-    margin: 1rem auto 0;
-    overflow: hidden;
+.marquee-content {
+    display: flex;
+    gap: 1.5rem;
+    width: max-content;
+    padding: 1rem 0;
+    animation: smoothScroll 30s linear infinite;
 }
 
-.progress-bar {
-    height: 100%;
-    background: var(--gradient-primary);
-    border-radius: var(--radius-full);
-    transition: width 0.3s ease-in-out;
+.marquee-content.paused {
+    animation-play-state: paused;
+}
+
+@keyframes smoothScroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* ============================================
+   DARK THEME ADJUSTMENTS
+   ============================================ */
+
+body.dark-theme .marquee-track::before {
+    background: linear-gradient(to right, var(--section-secondary), transparent);
+}
+
+body.dark-theme .marquee-track::after {
+    background: linear-gradient(to left, var(--section-secondary), transparent);
 }
 
 /* ============================================
@@ -129,27 +129,26 @@
 
 @media (max-width: 767px) {
     #projectcont {
-        padding: 3rem 1.5rem;
+        padding: 3rem 0;
         gap: 1.25rem;
+    }
+
+    .projectheader {
+        padding: 0 1.5rem;
     }
 
     .projectheader p {
         font-size: var(--text-lg);
     }
 
-    .projectarrowbuttons {
-        gap: 0.5rem;
-    }
-
-    .projectarrowbuttons img {
-        width: 32px;
-        height: 32px;
-        padding: 0.5rem;
-    }
-
-    .projectcontainer {
+    .marquee-content {
         gap: 1rem;
-        padding: 0.5rem 0;
+        animation-duration: 20s;
+    }
+
+    .marquee-track::before,
+    .marquee-track::after {
+        width: 60px;
     }
 }
 
@@ -159,21 +158,26 @@
 
 @media (min-width: 768px) and (max-width: 1023px) {
     #projectcont {
-        padding: 5rem 3rem;
+        padding: 5rem 0;
         gap: 1.5rem;
+    }
+
+    .projectheader {
+        padding: 0 3rem;
     }
 
     .projectheader p {
         font-size: var(--text-xl);
     }
 
-    .projectarrowbuttons img {
-        width: 36px;
-        height: 36px;
+    .marquee-content {
+        gap: 1.25rem;
+        animation-duration: 25s;
     }
 
-    .projectcontainer {
-        gap: 1.25rem;
+    .marquee-track::before,
+    .marquee-track::after {
+        width: 100px;
     }
 }
 
@@ -183,17 +187,16 @@
 
 @media (min-width: 1024px) and (max-width: 1339px) {
     #projectcont {
-        padding: 5rem 5rem;
+        padding: 5rem 0;
         gap: 1.5rem;
+    }
+
+    .projectheader {
+        padding: 0 5rem;
     }
 
     .projectheader p {
         font-size: var(--text-xl);
-    }
-
-    .projectarrowbuttons img {
-        width: 40px;
-        height: 40px;
     }
 }
 
@@ -203,11 +206,27 @@
 
 @media (min-width: 1440px) {
     #projectcont {
-        padding: 6rem 15%;
+        padding: 6rem 0;
     }
 
-    .projectarrowbuttons img {
-        width: 44px;
-        height: 44px;
+    .projectheader {
+        padding: 0 15%;
+    }
+
+    .marquee-content {
+        animation-duration: 35s;
+    }
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    .marquee-content {
+        animation: none;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 1rem 2rem;
     }
 }

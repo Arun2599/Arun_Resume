@@ -16,40 +16,23 @@ export class ShowprojectComponent implements OnInit {
   @ViewChild('container') container!: ElementRef;
   @Input() sectionTitle!: string;
   @Input() cards: Card[] = [];
-  
-  scrollAmount = 300;
-  progressPercentage: number = 0;
+
+  // Duplicated cards for infinite scroll
+  duplicatedCards: Card[] = [];
+  isPaused = false;
 
   constructor(private el: ElementRef) {}
 
   ngOnInit(): void {
-    setTimeout(() => this.updateProgress(), 0);
+    // Duplicate cards for seamless infinite scroll
+    this.duplicatedCards = [...this.cards, ...this.cards];
   }
 
-  moveLeft(): void {
-    const container = this.container.nativeElement;
-    container.scrollLeft -= this.scrollAmount;
-    this.updateProgress();
+  pauseAnimation(): void {
+    this.isPaused = true;
   }
 
-  moveRight(): void {
-    const container = this.container.nativeElement;
-    container.scrollLeft += this.scrollAmount;
-    this.updateProgress();
-  }
-
-  onScroll(): void {
-    this.updateProgress();
-  }
-
-  updateProgress(): void {
-    const container = this.container?.nativeElement;
-    if (container) {
-      const maxScroll = container.scrollWidth - container.clientWidth;
-      const currentScroll = container.scrollLeft;
-      this.progressPercentage = maxScroll > 0 
-        ? (currentScroll / maxScroll) * 100
-        : 100;
-    }
+  resumeAnimation(): void {
+    this.isPaused = false;
   }
 }
