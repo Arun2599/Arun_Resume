@@ -1,67 +1,19 @@
-<!-- Hero Section -->
+<!-- Hero Section - Split Layout with Flip Card -->
 <section id="heropage" class="hero">
-    <!-- Gradient Mesh Background -->
-    <div class="hero-bg"></div>
-
-    <!-- Navigation -->
-    <nav class="hero-nav" @slideIn>
+    <!-- Top Navigation Bar -->
+    <nav class="hero-navbar" @slideIn>
         <div class="logo">
             <span class="logo-icon"><img src="./assets/logo.svg" alt="Logo"></span>
             <span class="logo-text">Arunkumar</span>
         </div>
 
-        <div class="social-links">
-            <a href="https://www.behance.net/ruvjp" target="_blank" rel="noopener noreferrer" class="social-link">
-                <img src="./assets/behance.svg" alt="Behance">
-            </a>
-            <a href="https://www.linkedin.com/in/arun-kumar-937399254/" target="_blank" rel="noopener noreferrer" class="social-link">
-                <img src="./assets/linkedin.svg" alt="LinkedIn">
-            </a>
-            <a href="https://instagram.com/_arunvjcopzz_?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D" target="_blank" rel="noopener noreferrer" class="social-link">
-                <img src="./assets/instagram.svg" alt="Instagram">
-            </a>
-            <a href="https://dribbble.com/Arunkumar_07" target="_blank" rel="noopener noreferrer" class="social-link">
-                <img src="./assets/dribbble.svg" alt="Dribbble">
-            </a>
-        </div>
-    </nav>
-
-    <!-- Hero Content -->
-    <div class="hero-content" @fadeInUp>
-        <!-- Availability Badge -->
-        <div class="availability-badge">
-            <span class="pulse-dot"></span>
-            <span>Available for work</span>
+        <div class="nav-center">
+            <a (click)="scrollToSection('aboutsec')" class="nav-link">About</a>
+            <a (click)="scrollToSection('experiencesec')" class="nav-link">Experience</a>
+            <a (click)="scrollToSection('projectsec')" class="nav-link">Projects</a>
+            <a (click)="scrollToSection('connectsec')" class="nav-link">Contact</a>
         </div>
 
-        <!-- Main Heading -->
-        <h1 class="hero-title">
-            <span class="hero-name gradient-text">Arunkumar</span>
-        </h1>
-
-        <p class="hero-tagline">UI/UX Designer & Full-Stack Developer</p>
-
-        <p class="hero-description">
-            I design and build complete products—from Figma to Play Store.
-        </p>
-
-        <!-- CTA Buttons -->
-        <div class="hero-cta">
-            <a (click)="scrollToSection('projectsec')" class="btn btn-primary">
-                View My Work
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-            </a>
-            <a (click)="scrollToSection('connectsec')" class="btn btn-secondary">
-                Get in Touch
-            </a>
-        </div>
-    </div>
-
-    <!-- Side Menu -->
-    <div class="side-menu">
         <button class="theme-toggle" (click)="toggleTheme()" [attr.aria-label]="(isDarkMode$ | async) ? 'Switch to light mode' : 'Switch to dark mode'">
             <svg *ngIf="!(isDarkMode$ | async)" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
@@ -78,13 +30,163 @@
                 <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
             </svg>
         </button>
+    </nav>
 
-        <nav class="nav-links">
-            <a (click)="scrollToSection('aboutsec')" class="nav-link">About</a>
-            <a (click)="scrollToSection('experiencesec')" class="nav-link">Experience</a>
-            <a (click)="scrollToSection('projectsec')" class="nav-link">Projects</a>
-            <a (click)="scrollToSection('connectsec')" class="nav-link">Contact</a>
-        </nav>
+    <!-- Split Layout Container -->
+    <div class="hero-split">
+        <!-- Left Side - Content -->
+        <div class="hero-content" @fadeInUp>
+            <!-- Availability Badge -->
+            <div class="availability-badge">
+                <span class="pulse-dot"></span>
+                <span>Available for work</span>
+            </div>
+
+            <!-- Main Heading -->
+            <h1 class="hero-title">
+                Hi, I'm <span class="hero-name gradient-text">Arunkumar</span>
+            </h1>
+
+            <p class="hero-tagline">UI/UX Designer & Full-Stack Developer</p>
+
+            <p class="hero-description">
+                I design and build complete products—from Figma to Play Store.
+                Crafting digital experiences that users love and businesses need.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="hero-cta">
+                <a (click)="scrollToSection('projectsec')" class="btn btn-primary">
+                    View My Work
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+                <a (click)="scrollToSection('connectsec')" class="btn btn-secondary">
+                    Get in Touch
+                </a>
+            </div>
+
+            <!-- Social Links Row -->
+            <div class="hero-social">
+                <span class="social-label">Follow me</span>
+                <div class="social-row">
+                    <a href="https://www.behance.net/ruvjp" target="_blank" rel="noopener noreferrer" class="social-link" title="Behance">
+                        <img src="./assets/behance.svg" alt="Behance">
+                    </a>
+                    <a href="https://www.linkedin.com/in/arun-kumar-937399254/" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn">
+                        <img src="./assets/linkedin.svg" alt="LinkedIn">
+                    </a>
+                    <a href="https://instagram.com/_arunvjcopzz_?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram">
+                        <img src="./assets/instagram.svg" alt="Instagram">
+                    </a>
+                    <a href="https://dribbble.com/Arunkumar_07" target="_blank" rel="noopener noreferrer" class="social-link" title="Dribbble">
+                        <img src="./assets/dribbble.svg" alt="Dribbble">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side - Interactive Flip Card Photo -->
+        <div class="hero-photo-wrapper">
+            <div class="flip-card" [class.flipped]="isCardFlipped" (click)="toggleFlipCard()">
+                <!-- Front - Photo -->
+                <div class="flip-card-front">
+                    <div class="photo-container">
+                        <img src="./assets/arun-photo.jpg" alt="Arunkumar" class="profile-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        <div class="photo-placeholder">
+                            <span class="placeholder-initials">AK</span>
+                        </div>
+                        <div class="photo-glow"></div>
+                    </div>
+                    <div class="click-hint">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M15 15l6 6m-6-6v4.8m0-4.8h4.8"/>
+                            <path d="M9 19.8V15m0 0H4.2M9 15l-6 6"/>
+                            <path d="M15 4.2V9m0 0h4.8M15 9l6-6"/>
+                            <path d="M9 4.2V9m0 0H4.2M9 9L3 3"/>
+                        </svg>
+                        <span>Click to flip</span>
+                    </div>
+
+                    <!-- Floating Role Badges -->
+                    <div class="floating-badge badge-design">
+                        <span>UI/UX</span>
+                    </div>
+                    <div class="floating-badge badge-dev">
+                        <span>Full-Stack</span>
+                    </div>
+                    <div class="floating-badge badge-mobile">
+                        <span>Mobile</span>
+                    </div>
+                </div>
+
+                <!-- Back - Contact Info -->
+                <div class="flip-card-back">
+                    <h3 class="contact-title">Let's Connect</h3>
+
+                    <div class="contact-items">
+                        <a href="mailto:futuristicdesigner07@gmail.com" class="contact-row">
+                            <div class="contact-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </div>
+                            <div class="contact-text">
+                                <span class="contact-label">Email</span>
+                                <span class="contact-value">futuristicdesigner07&#64;gmail.com</span>
+                            </div>
+                        </a>
+
+                        <a href="tel:+918220710738" class="contact-row">
+                            <div class="contact-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+                            </div>
+                            <div class="contact-text">
+                                <span class="contact-label">Phone</span>
+                                <span class="contact-value">+91 8220710738</span>
+                            </div>
+                        </a>
+
+                        <div class="contact-row location">
+                            <div class="contact-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                            </div>
+                            <div class="contact-text">
+                                <span class="contact-label">Location</span>
+                                <span class="contact-value">Chennai, India</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="back-social">
+                        <a href="https://www.behance.net/ruvjp" target="_blank" rel="noopener noreferrer" class="back-social-link" (click)="$event.stopPropagation()">
+                            <img src="./assets/behance.svg" alt="Behance">
+                        </a>
+                        <a href="https://www.linkedin.com/in/arun-kumar-937399254/" target="_blank" rel="noopener noreferrer" class="back-social-link" (click)="$event.stopPropagation()">
+                            <img src="./assets/linkedin.svg" alt="LinkedIn">
+                        </a>
+                        <a href="https://instagram.com/_arunvjcopzz_?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D" target="_blank" rel="noopener noreferrer" class="back-social-link" (click)="$event.stopPropagation()">
+                            <img src="./assets/instagram.svg" alt="Instagram">
+                        </a>
+                        <a href="https://dribbble.com/Arunkumar_07" target="_blank" rel="noopener noreferrer" class="back-social-link" (click)="$event.stopPropagation()">
+                            <img src="./assets/dribbble.svg" alt="Dribbble">
+                        </a>
+                    </div>
+
+                    <div class="flip-back-hint">
+                        <span>Click to flip back</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Scroll Indicator -->

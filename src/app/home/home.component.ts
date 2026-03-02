@@ -31,11 +31,16 @@ import { ThemeService } from '../theme.service';
 
 export class HomeComponent {
   isDarkMode$ = this.themeService.darkMode$;
+  isCardFlipped = false;
 
   constructor(private router: Router, public themeService: ThemeService) {}
 
   toggleTheme() {
     this.themeService.toggleTheme();
+  }
+
+  toggleFlipCard() {
+    this.isCardFlipped = !this.isCardFlipped;
   }
 
   scrollToSection(sectionId: string): void {
