@@ -211,8 +211,13 @@
 /* CTA Buttons */
 .hero-cta {
     display: flex;
-    gap: 1rem;
-    margin-top: 0.5rem;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+.hero-cta .btn {
+    padding: 18px 40px;
+    min-height: 56px;
 }
 
 /* Hero Social Links */
@@ -257,13 +262,7 @@
 .social-link img {
     width: 18px;
     height: 18px;
-    opacity: 0.8;
     transition: all var(--duration-normal);
-}
-
-.social-link:hover img {
-    opacity: 1;
-    filter: brightness(0) invert(1);
 }
 
 /* ============================================
@@ -559,13 +558,7 @@ a.contact-row:hover {
 .back-social-link img {
     width: 20px;
     height: 20px;
-    opacity: 0.8;
     transition: all var(--duration-normal);
-}
-
-.back-social-link:hover img {
-    opacity: 1;
-    filter: brightness(0) invert(1);
 }
 
 .flip-back-hint {
@@ -808,24 +801,7 @@ a.contact-row:hover {
     transition: all var(--duration-normal);
 }
 
-/* Social button icons visibility by theme */
-body:not(.dark-theme) .social-btn img {
-    filter: brightness(0) invert(1);
-    opacity: 0.8;
-}
-
-body:not(.dark-theme) .social-btn:hover img {
-    opacity: 1;
-}
-
-body.dark-theme .social-btn img {
-    filter: none;
-    opacity: 0.8;
-}
-
-body.dark-theme .social-btn:hover img {
-    opacity: 1;
-}
+/* Social button icons - theme-specific styles in global styles.css */
 
 .social-btn:hover {
     color: var(--text-primary);
@@ -1083,49 +1059,7 @@ a.contact-value:hover {
 }
 
 /* ============================================
-   DARK THEME SPECIFIC (Light UI)
+   NOTE: Theme-specific icon styles are in global styles.css
+   because Angular's view encapsulation prevents body.dark-theme
+   selectors from working in component CSS
    ============================================ */
-
-/* In dark-theme (light UI), icons are dark so they're visible */
-body.dark-theme .social-link img,
-body.dark-theme .back-social-link img {
-    filter: none;
-    opacity: 0.8;
-}
-
-body.dark-theme .social-link:hover img,
-body.dark-theme .back-social-link:hover img {
-    filter: brightness(0) invert(1);
-    opacity: 1;
-}
-
-body.dark-theme .flip-card-front,
-body.dark-theme .flip-card-back {
-    background: var(--glass-bg);
-}
-
-body.dark-theme .photo-placeholder {
-    background: var(--gradient-primary);
-}
-
-/* ============================================
-   LIGHT THEME SPECIFIC (Dark UI - Default)
-   ============================================ */
-
-/* In default theme (dark UI), icons need to be light/white */
-body:not(.dark-theme) .social-link img,
-body:not(.dark-theme) .back-social-link img {
-    filter: brightness(0) invert(1);
-    opacity: 0.8;
-}
-
-body:not(.dark-theme) .social-link:hover img,
-body:not(.dark-theme) .back-social-link:hover img {
-    filter: brightness(0) invert(1);
-    opacity: 1;
-}
-
-/* Logo visibility in dark UI */
-body:not(.dark-theme) .logo-icon img {
-    filter: brightness(0) invert(1);
-}
