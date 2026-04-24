@@ -18,58 +18,40 @@ interface Testimonial {
 export class TestimonialsComponent implements OnInit {
   testimonials: Testimonial[] = [
     {
-      name: 'Rajesh Kumar',
-      role: 'Product Manager',
+      name: 'Abilpaul',
+      role: 'Team Lead',
       company: 'Techcora Corporation',
-      avatar: 'RK',
-      content: 'Arun delivered exceptional work on our School ERP system. His attention to detail in both design and development is remarkable. The final product exceeded our expectations.',
+      avatar: 'AP',
+      content: 'Arun is easy to work with. He asks the right questions before starting and keeps things simple. The UI he builds always feels clean and the team finds it easy to use.',
       rating: 5,
       gradient: 'linear-gradient(135deg, #6366f1, #8b5cf6)'
     },
     {
-      name: 'Priya Sharma',
+      name: 'Gnana Mani',
       role: 'Founder',
-      company: 'Maven Alpha',
-      avatar: 'PS',
-      content: 'Working with Arun was a game-changer for our employee management dashboard. He understood our vision perfectly and brought it to life with clean, intuitive interfaces.',
+      company: 'Innerplay',
+      avatar: 'GM',
+      content: 'Arun understood our idea quickly and gave it a real look and feel. The app is smooth and users actually enjoy it. He also updates changes fast whenever we ask.',
       rating: 5,
       gradient: 'linear-gradient(135deg, #ec4899, #f472b6)'
     },
     {
-      name: 'Vikram Menon',
-      role: 'CTO',
-      company: 'QuickMart Solutions',
-      avatar: 'VM',
-      content: 'Arun built our entire quick commerce platform from scratch. His full-stack expertise and design sensibility made the development process seamless. Highly recommended!',
+      name: 'Chidambaram',
+      role: 'Business Owner',
+      company: 'Quick Commerce Platform & POS',
+      avatar: 'CH',
+      content: 'He built our delivery app and POS from start to finish. My staff learned it in one day. Orders, billing and reports all in one place. Very happy with the work.',
       rating: 5,
       gradient: 'linear-gradient(135deg, #10b981, #14b8a6)'
     },
     {
-      name: 'Deepa Nair',
-      role: 'CEO',
-      company: 'HealthFirst Apps',
-      avatar: 'DN',
-      content: 'The mental health app Arun designed for us has received outstanding user feedback. His understanding of user psychology and clean UI patterns made all the difference.',
-      rating: 5,
-      gradient: 'linear-gradient(135deg, #f59e0b, #fbbf24)'
-    },
-    {
-      name: 'Suresh Iyer',
-      role: 'Director',
+      name: 'Vignesh',
+      role: 'Founder',
       company: 'Vignesh Homes',
-      avatar: 'SI',
-      content: 'Our construction website looks absolutely stunning. Arun captured our brand perfectly with modern design and smooth animations. Clients love the project showcase feature.',
+      avatar: 'VG',
+      content: 'Our website came out exactly how I wanted. Simple, neat and shows our projects well. Many customers tell us they found us through the site. Thanks Arun.',
       rating: 5,
       gradient: 'linear-gradient(135deg, #ef4444, #f87171)'
-    },
-    {
-      name: 'Ananya Reddy',
-      role: 'Operations Head',
-      company: 'Grace Auto Service',
-      avatar: 'AR',
-      content: 'The invoice ERP system Arun developed streamlined our entire billing process. Simple, intuitive, and exactly what we needed. Our team picked it up in no time.',
-      rating: 5,
-      gradient: 'linear-gradient(135deg, #3b82f6, #60a5fa)'
     }
   ];
 
