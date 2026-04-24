@@ -67,18 +67,55 @@
 }
 
 .company-card {
+    position: relative;
     background: var(--bg-card);
     border: 1px solid var(--glass-border);
     border-radius: 24px;
     padding: 2rem;
     cursor: pointer;
     transition: all 0.4s ease;
+    text-align: left;
+    font-family: inherit;
+    color: inherit;
+    width: 100%;
+    overflow: hidden;
 }
 
 .company-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
     border-color: var(--accent-primary);
+}
+
+.company-card:focus-visible {
+    outline: none;
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.35);
+}
+
+.card-arrow {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    color: var(--text-secondary);
+    opacity: 0.7;
+    transition: all 0.35s ease;
+}
+
+.company-card:hover .card-arrow {
+    opacity: 1;
+    background: var(--gradient-primary);
+    border-color: transparent;
+    color: #fff;
+    transform: translate(2px, -2px);
 }
 
 .card-inner {
@@ -173,6 +210,16 @@
 
 .projects-preview {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-top: 1rem;
+    margin-top: 0.25rem;
+    border-top: 1px solid var(--glass-border);
+}
+
+.projects-cta {
+    display: inline-flex;
     align-items: baseline;
     gap: 0.5rem;
 }
@@ -189,6 +236,29 @@
 .projects-label {
     font-size: var(--text-sm);
     color: var(--text-secondary);
+}
+
+.explore-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--accent-primary);
+    letter-spacing: var(--tracking-wide, 0.02em);
+    transition: gap 0.3s ease, transform 0.3s ease;
+}
+
+.explore-arrow {
+    transition: transform 0.3s ease;
+}
+
+.company-card:hover .explore-link {
+    gap: 0.65rem;
+}
+
+.company-card:hover .explore-arrow {
+    transform: translateX(3px);
 }
 
 /* ============================================
@@ -230,6 +300,18 @@ body.dark-theme .duration-badge {
     .company-icon-wrapper {
         width: 48px;
         height: 48px;
+    }
+
+    .card-arrow {
+        top: 1rem;
+        right: 1rem;
+        width: 32px;
+        height: 32px;
+        opacity: 1;
+    }
+
+    .projects-count {
+        font-size: 1.75rem;
     }
 }
 

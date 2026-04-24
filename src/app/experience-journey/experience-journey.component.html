@@ -8,12 +8,20 @@
 
   <!-- Company Cards Grid -->
   <div class="companies-grid" [@staggerCards]="experiences.length">
-    <div
+    <button
+      type="button"
       class="company-card"
       *ngFor="let exp of experiences; let i = index"
       (click)="openExperience(exp)"
+      [attr.aria-label]="'View ' + exp.projectCount + ' projects from ' + exp.company"
       [@fadeInUp]
     >
+      <span class="card-arrow" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="7" y1="17" x2="17" y2="7"></line>
+          <polyline points="7 7 17 7 17 17"></polyline>
+        </svg>
+      </span>
       <div class="card-inner">
         <div class="company-icon-wrapper">
           <span class="company-icon">{{ exp.icon }}</span>
@@ -29,10 +37,19 @@
           <span class="duration-badge">{{ exp.duration }}</span>
         </div>
         <div class="projects-preview">
-          <span class="projects-count">{{ exp.projectCount }}</span>
-          <span class="projects-label">Projects</span>
+          <span class="projects-cta">
+            <span class="projects-count">{{ exp.projectCount }}</span>
+            <span class="projects-label">Projects</span>
+          </span>
+          <span class="explore-link">
+            Explore
+            <svg class="explore-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </span>
         </div>
       </div>
-    </div>
+    </button>
   </div>
 </section>
