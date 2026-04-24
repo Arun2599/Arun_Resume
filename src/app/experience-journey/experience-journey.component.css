@@ -132,10 +132,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #fff;
+    transition: transform 0.35s ease;
+}
+
+.company-card:hover .company-icon-wrapper {
+    transform: scale(1.05) rotate(-3deg);
 }
 
 .company-icon {
-    font-size: 1.75rem;
+    width: 28px;
+    height: 28px;
 }
 
 .company-details {

@@ -98,21 +98,36 @@
     opacity: 1;
 }
 
-/* Card Icon */
+/* Card Icon - premium line icon in gradient container */
 .card-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    display: inline-block;
-    animation: float 6s ease-in-out infinite;
+    width: 56px;
+    height: 56px;
+    margin-bottom: 1.25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-xl, 16px);
+    background: rgba(139, 92, 246, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    color: var(--accent-primary);
+    transition: all var(--duration-normal) var(--ease-out);
 }
 
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-8px);
-    }
+.card-icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+.bento-card:hover .card-icon {
+    background: var(--gradient-primary);
+    border-color: transparent;
+    color: #fff;
+    transform: scale(1.05) rotate(-3deg);
+}
+
+body.dark-theme .card-icon {
+    background: rgba(124, 58, 237, 0.08);
+    border-color: rgba(124, 58, 237, 0.18);
 }
 
 /* Card Title */
@@ -159,7 +174,13 @@
 
 /* Large Card Specific */
 .bento-large .card-icon {
-    font-size: 3rem;
+    width: 64px;
+    height: 64px;
+}
+
+.bento-large .card-icon svg {
+    width: 32px;
+    height: 32px;
 }
 
 .bento-large .card-title {
@@ -177,7 +198,14 @@
 }
 
 .bento-small .card-icon {
-    font-size: 2rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+}
+
+.bento-small .card-icon svg {
+    width: 24px;
+    height: 24px;
 }
 
 /* ============================================
@@ -224,11 +252,24 @@
     }
 
     .card-icon {
-        font-size: 2rem;
+        width: 48px;
+        height: 48px;
+        margin-bottom: 1rem;
+    }
+
+    .card-icon svg {
+        width: 24px;
+        height: 24px;
     }
 
     .bento-large .card-icon {
-        font-size: 2.5rem;
+        width: 56px;
+        height: 56px;
+    }
+
+    .bento-large .card-icon svg {
+        width: 28px;
+        height: 28px;
     }
 
     .card-title {
